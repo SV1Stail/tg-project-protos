@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package post;
+import "google/protobuf/timestamp.proto";
+
+go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publish_post;post_pb;";
+
+message PublishPost {
+    // Object identifier
+    string id = 1;
+    // channel to post
+    string publish_channel = 2;
+    // Object text or other info in body
+    string data = 3;
+    // Object status
+    string status = 4;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 5;
+    // Object creation time
+    google.protobuf.Timestamp created_time = 6;
+    // Object last updated time
+    google.protobuf.Timestamp updated_time = 7;
+}
+
+message CreatePostRequest {
+    // channel to post
+    string publish_channel = 1;
+    // Object text or other info in body
+    string data = 2;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 3;
+}
+message CreatePostResponse { 
+    PublishPost publishPost = 1;
+}
+
+message UpdatePostRequest {
+    // Object identifier
+    string id = 1;
+    // channel to post
+    string publish_channel = 2;
+    // Object text or other info in body
+    string data = 3;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 4;
+}
+message UpdatePostResponse { 
+    PublishPost publishPost = 1;
+}
+
+message DeletePostRequest {
+    // Object identifier
+    string id = 1;
+}
+message DeletePostResponse {
+    PublishPost publishPost = 1;
+}
+
+message GetPostRequest {
+    // Object identifier
+    string id = 1;
+}
+message GetPostResponse {
+    PublishPost publishPost = 1;
+}
+
+message GetPostsForChannelRequest {
+    // channel to post
+    string publish_channel = 1;
+}
+message GetPostsForChannelResponse {
+    // publishPosts array
+    repeated PublishPost publishPosts = 1;
+}
+
+message CreatePostSomeChannelsRequest {
+    // channels to post
+    repeated string publish_channels = 1;
+    // Object text or other info in body
+    string data = 2;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 3;
+}
+message CreatePostSomeChannelsResponse { 
+    repeated PublishPost publishPosts = 1;
+}
