@@ -1,14 +1,15 @@
 syntax = "proto3";
 
-package post;
+package publish_post;
+
 import "google/protobuf/timestamp.proto";
 
-go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publish_post;post_pb;";
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publish_post;publish_post_pb";
 
 message PublishPost {
     // Object identifier
     string id = 1;
-    // channel to post
+    // channel to publish
     string publish_channel = 2;
     // Object text or other info in body
     string data = 3;
