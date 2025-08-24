@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
 
-option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publisher;publisher_pb";
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pb";
 
 service Publisher {
     rpc PublishScheduled (PublishScheduledRequest) returns (google.protobuf.Empty);

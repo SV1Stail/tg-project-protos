@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package publish_post;
+package queue_scheduler;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publish_post;publish_post_pb";
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/publish_post;publish_post_pb";
 
 message PublishPost {
     // Object identifier

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 package queue_scheduler;
-import "publish_post.proto"; // относительно папки откуда запускается protoc -I
+import "proto/queue_scheduler/publish_post.proto"; // относительно папки откуда запускается protoc -I
 
-option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler;queue_scheduler_pb";
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/queue_scheduler;queue_scheduler_pb";
 
 service Queuescheduler {
     rpc CreatePost (CreatePostRequest) returns (CreatePostResponse);
