@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.12.4
-// source: proto/queue_scheduler/queue_scheduler.proto
+// source: queue_scheduler/queue_scheduler.proto
 
 package queue_scheduler_pb
 
@@ -21,49 +21,49 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-var File_proto_queue_scheduler_queue_scheduler_proto protoreflect.FileDescriptor
+var File_queue_scheduler_queue_scheduler_proto protoreflect.FileDescriptor
 
-const file_proto_queue_scheduler_queue_scheduler_proto_rawDesc = "" +
+const file_queue_scheduler_queue_scheduler_proto_rawDesc = "" +
 	"\n" +
-	"+proto/queue_scheduler/queue_scheduler.proto\x12\x0fqueue_scheduler\x1a(proto/queue_scheduler/publish_post.proto2\xcd\x04\n" +
-	"\x0eQueuescheduler\x12U\n" +
+	"%queue_scheduler/queue_scheduler.proto\x12\x0fqueue_scheduler\x1a\"queue_scheduler/publish_post.proto2\xa9\x04\n" +
+	"\x0eQueuescheduler\x12O\n" +
 	"\n" +
-	"CreatePost\x12\".queue_scheduler.CreatePostRequest\x1a#.queue_scheduler.CreatePostResponse\x12y\n" +
-	"\x16CreatePostSomeChannels\x12..queue_scheduler.CreatePostSomeChannelsRequest\x1a/.queue_scheduler.CreatePostSomeChannelsResponse\x12U\n" +
+	"CreatePost\x12\x1f.publish_post.CreatePostRequest\x1a .publish_post.CreatePostResponse\x12s\n" +
+	"\x16CreatePostSomeChannels\x12+.publish_post.CreatePostSomeChannelsRequest\x1a,.publish_post.CreatePostSomeChannelsResponse\x12O\n" +
 	"\n" +
-	"UpdatePost\x12\".queue_scheduler.UpdatePostRequest\x1a#.queue_scheduler.UpdatePostResponse\x12U\n" +
+	"UpdatePost\x12\x1f.publish_post.UpdatePostRequest\x1a .publish_post.UpdatePostResponse\x12O\n" +
 	"\n" +
-	"DeletePost\x12\".queue_scheduler.DeletePostRequest\x1a#.queue_scheduler.DeletePostResponse\x12L\n" +
-	"\aGetPost\x12\x1f.queue_scheduler.GetPostRequest\x1a .queue_scheduler.GetPostResponse\x12m\n" +
-	"\x12GetPostsForChannel\x12*.queue_scheduler.GetPostsForChannelRequest\x1a+.queue_scheduler.GetPostsForChannelResponseBaZ_github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/queue_scheduler;queue_scheduler_pbb\x06proto3"
+	"DeletePost\x12\x1f.publish_post.DeletePostRequest\x1a .publish_post.DeletePostResponse\x12F\n" +
+	"\aGetPost\x12\x1c.publish_post.GetPostRequest\x1a\x1d.publish_post.GetPostResponse\x12g\n" +
+	"\x12GetPostsForChannel\x12'.publish_post.GetPostsForChannelRequest\x1a(.publish_post.GetPostsForChannelResponseBaZ_github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/queue_scheduler;queue_scheduler_pbb\x06proto3"
 
-var file_proto_queue_scheduler_queue_scheduler_proto_goTypes = []any{
-	(*publish_post.CreatePostRequest)(nil),              // 0: queue_scheduler.CreatePostRequest
-	(*publish_post.CreatePostSomeChannelsRequest)(nil),  // 1: queue_scheduler.CreatePostSomeChannelsRequest
-	(*publish_post.UpdatePostRequest)(nil),              // 2: queue_scheduler.UpdatePostRequest
-	(*publish_post.DeletePostRequest)(nil),              // 3: queue_scheduler.DeletePostRequest
-	(*publish_post.GetPostRequest)(nil),                 // 4: queue_scheduler.GetPostRequest
-	(*publish_post.GetPostsForChannelRequest)(nil),      // 5: queue_scheduler.GetPostsForChannelRequest
-	(*publish_post.CreatePostResponse)(nil),             // 6: queue_scheduler.CreatePostResponse
-	(*publish_post.CreatePostSomeChannelsResponse)(nil), // 7: queue_scheduler.CreatePostSomeChannelsResponse
-	(*publish_post.UpdatePostResponse)(nil),             // 8: queue_scheduler.UpdatePostResponse
-	(*publish_post.DeletePostResponse)(nil),             // 9: queue_scheduler.DeletePostResponse
-	(*publish_post.GetPostResponse)(nil),                // 10: queue_scheduler.GetPostResponse
-	(*publish_post.GetPostsForChannelResponse)(nil),     // 11: queue_scheduler.GetPostsForChannelResponse
+var file_queue_scheduler_queue_scheduler_proto_goTypes = []any{
+	(*publish_post.CreatePostRequest)(nil),              // 0: publish_post.CreatePostRequest
+	(*publish_post.CreatePostSomeChannelsRequest)(nil),  // 1: publish_post.CreatePostSomeChannelsRequest
+	(*publish_post.UpdatePostRequest)(nil),              // 2: publish_post.UpdatePostRequest
+	(*publish_post.DeletePostRequest)(nil),              // 3: publish_post.DeletePostRequest
+	(*publish_post.GetPostRequest)(nil),                 // 4: publish_post.GetPostRequest
+	(*publish_post.GetPostsForChannelRequest)(nil),      // 5: publish_post.GetPostsForChannelRequest
+	(*publish_post.CreatePostResponse)(nil),             // 6: publish_post.CreatePostResponse
+	(*publish_post.CreatePostSomeChannelsResponse)(nil), // 7: publish_post.CreatePostSomeChannelsResponse
+	(*publish_post.UpdatePostResponse)(nil),             // 8: publish_post.UpdatePostResponse
+	(*publish_post.DeletePostResponse)(nil),             // 9: publish_post.DeletePostResponse
+	(*publish_post.GetPostResponse)(nil),                // 10: publish_post.GetPostResponse
+	(*publish_post.GetPostsForChannelResponse)(nil),     // 11: publish_post.GetPostsForChannelResponse
 }
-var file_proto_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
-	0,  // 0: queue_scheduler.Queuescheduler.CreatePost:input_type -> queue_scheduler.CreatePostRequest
-	1,  // 1: queue_scheduler.Queuescheduler.CreatePostSomeChannels:input_type -> queue_scheduler.CreatePostSomeChannelsRequest
-	2,  // 2: queue_scheduler.Queuescheduler.UpdatePost:input_type -> queue_scheduler.UpdatePostRequest
-	3,  // 3: queue_scheduler.Queuescheduler.DeletePost:input_type -> queue_scheduler.DeletePostRequest
-	4,  // 4: queue_scheduler.Queuescheduler.GetPost:input_type -> queue_scheduler.GetPostRequest
-	5,  // 5: queue_scheduler.Queuescheduler.GetPostsForChannel:input_type -> queue_scheduler.GetPostsForChannelRequest
-	6,  // 6: queue_scheduler.Queuescheduler.CreatePost:output_type -> queue_scheduler.CreatePostResponse
-	7,  // 7: queue_scheduler.Queuescheduler.CreatePostSomeChannels:output_type -> queue_scheduler.CreatePostSomeChannelsResponse
-	8,  // 8: queue_scheduler.Queuescheduler.UpdatePost:output_type -> queue_scheduler.UpdatePostResponse
-	9,  // 9: queue_scheduler.Queuescheduler.DeletePost:output_type -> queue_scheduler.DeletePostResponse
-	10, // 10: queue_scheduler.Queuescheduler.GetPost:output_type -> queue_scheduler.GetPostResponse
-	11, // 11: queue_scheduler.Queuescheduler.GetPostsForChannel:output_type -> queue_scheduler.GetPostsForChannelResponse
+var file_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
+	0,  // 0: queue_scheduler.Queuescheduler.CreatePost:input_type -> publish_post.CreatePostRequest
+	1,  // 1: queue_scheduler.Queuescheduler.CreatePostSomeChannels:input_type -> publish_post.CreatePostSomeChannelsRequest
+	2,  // 2: queue_scheduler.Queuescheduler.UpdatePost:input_type -> publish_post.UpdatePostRequest
+	3,  // 3: queue_scheduler.Queuescheduler.DeletePost:input_type -> publish_post.DeletePostRequest
+	4,  // 4: queue_scheduler.Queuescheduler.GetPost:input_type -> publish_post.GetPostRequest
+	5,  // 5: queue_scheduler.Queuescheduler.GetPostsForChannel:input_type -> publish_post.GetPostsForChannelRequest
+	6,  // 6: queue_scheduler.Queuescheduler.CreatePost:output_type -> publish_post.CreatePostResponse
+	7,  // 7: queue_scheduler.Queuescheduler.CreatePostSomeChannels:output_type -> publish_post.CreatePostSomeChannelsResponse
+	8,  // 8: queue_scheduler.Queuescheduler.UpdatePost:output_type -> publish_post.UpdatePostResponse
+	9,  // 9: queue_scheduler.Queuescheduler.DeletePost:output_type -> publish_post.DeletePostResponse
+	10, // 10: queue_scheduler.Queuescheduler.GetPost:output_type -> publish_post.GetPostResponse
+	11, // 11: queue_scheduler.Queuescheduler.GetPostsForChannel:output_type -> publish_post.GetPostsForChannelResponse
 	6,  // [6:12] is the sub-list for method output_type
 	0,  // [0:6] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
@@ -71,25 +71,25 @@ var file_proto_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
 	0,  // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_queue_scheduler_queue_scheduler_proto_init() }
-func file_proto_queue_scheduler_queue_scheduler_proto_init() {
-	if File_proto_queue_scheduler_queue_scheduler_proto != nil {
+func init() { file_queue_scheduler_queue_scheduler_proto_init() }
+func file_queue_scheduler_queue_scheduler_proto_init() {
+	if File_queue_scheduler_queue_scheduler_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_queue_scheduler_queue_scheduler_proto_rawDesc), len(file_proto_queue_scheduler_queue_scheduler_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_queue_scheduler_queue_scheduler_proto_rawDesc), len(file_queue_scheduler_queue_scheduler_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_queue_scheduler_queue_scheduler_proto_goTypes,
-		DependencyIndexes: file_proto_queue_scheduler_queue_scheduler_proto_depIdxs,
+		GoTypes:           file_queue_scheduler_queue_scheduler_proto_goTypes,
+		DependencyIndexes: file_queue_scheduler_queue_scheduler_proto_depIdxs,
 	}.Build()
-	File_proto_queue_scheduler_queue_scheduler_proto = out.File
-	file_proto_queue_scheduler_queue_scheduler_proto_goTypes = nil
-	file_proto_queue_scheduler_queue_scheduler_proto_depIdxs = nil
+	File_queue_scheduler_queue_scheduler_proto = out.File
+	file_queue_scheduler_queue_scheduler_proto_goTypes = nil
+	file_queue_scheduler_queue_scheduler_proto_depIdxs = nil
 }

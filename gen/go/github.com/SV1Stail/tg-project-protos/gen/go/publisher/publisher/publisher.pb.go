@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.12.4
-// source: proto/publisher/publisher.proto
+// source: publisher/publisher.proto
 
 package publisher_pb
 
@@ -42,7 +42,7 @@ type PublishScheduledRequest struct {
 
 func (x *PublishScheduledRequest) Reset() {
 	*x = PublishScheduledRequest{}
-	mi := &file_proto_publisher_publisher_proto_msgTypes[0]
+	mi := &file_publisher_publisher_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -54,7 +54,7 @@ func (x *PublishScheduledRequest) String() string {
 func (*PublishScheduledRequest) ProtoMessage() {}
 
 func (x *PublishScheduledRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_publisher_publisher_proto_msgTypes[0]
+	mi := &file_publisher_publisher_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -67,7 +67,7 @@ func (x *PublishScheduledRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishScheduledRequest.ProtoReflect.Descriptor instead.
 func (*PublishScheduledRequest) Descriptor() ([]byte, []int) {
-	return file_proto_publisher_publisher_proto_rawDescGZIP(), []int{0}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PublishScheduledRequest) GetId() string {
@@ -121,7 +121,7 @@ type PublishNowRequest struct {
 
 func (x *PublishNowRequest) Reset() {
 	*x = PublishNowRequest{}
-	mi := &file_proto_publisher_publisher_proto_msgTypes[1]
+	mi := &file_publisher_publisher_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -133,7 +133,7 @@ func (x *PublishNowRequest) String() string {
 func (*PublishNowRequest) ProtoMessage() {}
 
 func (x *PublishNowRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_publisher_publisher_proto_msgTypes[1]
+	mi := &file_publisher_publisher_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -146,7 +146,7 @@ func (x *PublishNowRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishNowRequest.ProtoReflect.Descriptor instead.
 func (*PublishNowRequest) Descriptor() ([]byte, []int) {
-	return file_proto_publisher_publisher_proto_rawDescGZIP(), []int{1}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PublishNowRequest) GetId() string {
@@ -177,11 +177,11 @@ func (x *PublishNowRequest) GetPublishAt() *timestamp.Timestamp {
 	return nil
 }
 
-var File_proto_publisher_publisher_proto protoreflect.FileDescriptor
+var File_publisher_publisher_proto protoreflect.FileDescriptor
 
-const file_proto_publisher_publisher_proto_rawDesc = "" +
+const file_publisher_publisher_proto_rawDesc = "" +
 	"\n" +
-	"\x1fproto/publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xd2\x01\n" +
+	"\x19publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xd2\x01\n" +
 	"\x17PublishScheduledRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
 	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
@@ -201,26 +201,26 @@ const file_proto_publisher_publisher_proto_rawDesc = "" +
 	"PublishNow\x12\x1c.publisher.PublishNowRequest\x1a\x16.google.protobuf.EmptyBOZMgithub.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pbb\x06proto3"
 
 var (
-	file_proto_publisher_publisher_proto_rawDescOnce sync.Once
-	file_proto_publisher_publisher_proto_rawDescData []byte
+	file_publisher_publisher_proto_rawDescOnce sync.Once
+	file_publisher_publisher_proto_rawDescData []byte
 )
 
-func file_proto_publisher_publisher_proto_rawDescGZIP() []byte {
-	file_proto_publisher_publisher_proto_rawDescOnce.Do(func() {
-		file_proto_publisher_publisher_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_publisher_publisher_proto_rawDesc), len(file_proto_publisher_publisher_proto_rawDesc)))
+func file_publisher_publisher_proto_rawDescGZIP() []byte {
+	file_publisher_publisher_proto_rawDescOnce.Do(func() {
+		file_publisher_publisher_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_publisher_publisher_proto_rawDesc), len(file_publisher_publisher_proto_rawDesc)))
 	})
-	return file_proto_publisher_publisher_proto_rawDescData
+	return file_publisher_publisher_proto_rawDescData
 }
 
-var file_proto_publisher_publisher_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_proto_publisher_publisher_proto_goTypes = []any{
+var file_publisher_publisher_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_publisher_publisher_proto_goTypes = []any{
 	(*PublishScheduledRequest)(nil), // 0: publisher.PublishScheduledRequest
 	(*PublishNowRequest)(nil),       // 1: publisher.PublishNowRequest
 	(*timestamp.Timestamp)(nil),     // 2: google.protobuf.Timestamp
 	(*duration.Duration)(nil),       // 3: google.protobuf.Duration
 	(*empty.Empty)(nil),             // 4: google.protobuf.Empty
 }
-var file_proto_publisher_publisher_proto_depIdxs = []int32{
+var file_publisher_publisher_proto_depIdxs = []int32{
 	2, // 0: publisher.PublishScheduledRequest.publish_at:type_name -> google.protobuf.Timestamp
 	3, // 1: publisher.PublishScheduledRequest.delay:type_name -> google.protobuf.Duration
 	2, // 2: publisher.PublishNowRequest.publish_at:type_name -> google.protobuf.Timestamp
@@ -235,26 +235,26 @@ var file_proto_publisher_publisher_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_proto_publisher_publisher_proto_init() }
-func file_proto_publisher_publisher_proto_init() {
-	if File_proto_publisher_publisher_proto != nil {
+func init() { file_publisher_publisher_proto_init() }
+func file_publisher_publisher_proto_init() {
+	if File_publisher_publisher_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_publisher_publisher_proto_rawDesc), len(file_proto_publisher_publisher_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_publisher_publisher_proto_rawDesc), len(file_publisher_publisher_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_publisher_publisher_proto_goTypes,
-		DependencyIndexes: file_proto_publisher_publisher_proto_depIdxs,
-		MessageInfos:      file_proto_publisher_publisher_proto_msgTypes,
+		GoTypes:           file_publisher_publisher_proto_goTypes,
+		DependencyIndexes: file_publisher_publisher_proto_depIdxs,
+		MessageInfos:      file_publisher_publisher_proto_msgTypes,
 	}.Build()
-	File_proto_publisher_publisher_proto = out.File
-	file_proto_publisher_publisher_proto_goTypes = nil
-	file_proto_publisher_publisher_proto_depIdxs = nil
+	File_publisher_publisher_proto = out.File
+	file_publisher_publisher_proto_goTypes = nil
+	file_publisher_publisher_proto_depIdxs = nil
 }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: proto/publisher/publisher.proto
+// source: publisher/publisher.proto
 
 package publisher_pb
 
@@ -156,5 +156,5 @@ var Publisher_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/publisher/publisher.proto",
+	Metadata: "publisher/publisher.proto",
 }

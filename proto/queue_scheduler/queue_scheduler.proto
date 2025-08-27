@@ -1,15 +1,15 @@
 syntax = "proto3";
 
 package queue_scheduler;
-import "proto/queue_scheduler/publish_post.proto"; // относительно папки откуда запускается protoc -I
+import "queue_scheduler/publish_post.proto"; // относительно папки откуда запускается protoc -I
 
 option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/queue_scheduler;queue_scheduler_pb";
 
 service Queuescheduler {
-    rpc CreatePost (CreatePostRequest) returns (CreatePostResponse);
-    rpc CreatePostSomeChannels (CreatePostSomeChannelsRequest) returns (CreatePostSomeChannelsResponse);
-    rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse);
-    rpc DeletePost (DeletePostRequest) returns (DeletePostResponse);
-    rpc GetPost (GetPostRequest) returns (GetPostResponse);
-    rpc GetPostsForChannel (GetPostsForChannelRequest) returns (GetPostsForChannelResponse);
+    rpc CreatePost (publish_post.CreatePostRequest) returns (publish_post.CreatePostResponse);
+    rpc CreatePostSomeChannels (publish_post.CreatePostSomeChannelsRequest) returns (publish_post.CreatePostSomeChannelsResponse);
+    rpc UpdatePost (publish_post.UpdatePostRequest) returns (publish_post.UpdatePostResponse);
+    rpc DeletePost (publish_post.DeletePostRequest) returns (publish_post.DeletePostResponse);
+    rpc GetPost (publish_post.GetPostRequest) returns (publish_post.GetPostResponse);
+    rpc GetPostsForChannel (publish_post.GetPostsForChannelRequest) returns (publish_post.GetPostsForChannelResponse);
 }
