@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package publisher;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pb";
+
+service Publisher {
+    rpc PublishScheduled (PublishScheduledRequest) returns (google.protobuf.Empty);
+    rpc PublishNow (PublishNowRequest) returns (google.protobuf.Empty);
+}
+
+message PublishScheduledRequest {
+    // Object identifier
+    string id = 1;
+    // channel to post
+    string publish_channel = 2;
+    // Object text or other info in body
+    string data = 3;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 4;
+    // Object publish delay
+    google.protobuf.Duration delay = 5;
+}
+
+message PublishNowRequest {
+    // Object identifier
+    string id = 1;
+    // channel to post
+    string publish_channel = 2;
+    // Object text or other info in body
+    string data = 3;
+    // Object publishing time
+    google.protobuf.Timestamp publish_at = 4;
+}
+
+
