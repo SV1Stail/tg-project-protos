@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.12.4
-// source: queue_scheduler/queue_scheduler.proto
+// source: queue_scheduler/queue_scheduler/queue_scheduler.proto
 
 package queue_scheduler_pb
 
@@ -21,11 +21,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-var File_queue_scheduler_queue_scheduler_proto protoreflect.FileDescriptor
+var File_queue_scheduler_queue_scheduler_queue_scheduler_proto protoreflect.FileDescriptor
 
-const file_queue_scheduler_queue_scheduler_proto_rawDesc = "" +
+const file_queue_scheduler_queue_scheduler_queue_scheduler_proto_rawDesc = "" +
 	"\n" +
-	"%queue_scheduler/queue_scheduler.proto\x12\x0fqueue_scheduler\x1a\"queue_scheduler/publish_post.proto2\xa9\x04\n" +
+	"5queue_scheduler/queue_scheduler/queue_scheduler.proto\x12\x0fqueue_scheduler\x1a/queue_scheduler/publish_post/publish_post.proto2\xa9\x04\n" +
 	"\x0eQueuescheduler\x12O\n" +
 	"\n" +
 	"CreatePost\x12\x1f.publish_post.CreatePostRequest\x1a .publish_post.CreatePostResponse\x12s\n" +
@@ -37,7 +37,7 @@ const file_queue_scheduler_queue_scheduler_proto_rawDesc = "" +
 	"\aGetPost\x12\x1c.publish_post.GetPostRequest\x1a\x1d.publish_post.GetPostResponse\x12g\n" +
 	"\x12GetPostsForChannel\x12'.publish_post.GetPostsForChannelRequest\x1a(.publish_post.GetPostsForChannelResponseBaZ_github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/queue_scheduler;queue_scheduler_pbb\x06proto3"
 
-var file_queue_scheduler_queue_scheduler_proto_goTypes = []any{
+var file_queue_scheduler_queue_scheduler_queue_scheduler_proto_goTypes = []any{
 	(*publish_post.CreatePostRequest)(nil),              // 0: publish_post.CreatePostRequest
 	(*publish_post.CreatePostSomeChannelsRequest)(nil),  // 1: publish_post.CreatePostSomeChannelsRequest
 	(*publish_post.UpdatePostRequest)(nil),              // 2: publish_post.UpdatePostRequest
@@ -51,7 +51,7 @@ var file_queue_scheduler_queue_scheduler_proto_goTypes = []any{
 	(*publish_post.GetPostResponse)(nil),                // 10: publish_post.GetPostResponse
 	(*publish_post.GetPostsForChannelResponse)(nil),     // 11: publish_post.GetPostsForChannelResponse
 }
-var file_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
+var file_queue_scheduler_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
 	0,  // 0: queue_scheduler.Queuescheduler.CreatePost:input_type -> publish_post.CreatePostRequest
 	1,  // 1: queue_scheduler.Queuescheduler.CreatePostSomeChannels:input_type -> publish_post.CreatePostSomeChannelsRequest
 	2,  // 2: queue_scheduler.Queuescheduler.UpdatePost:input_type -> publish_post.UpdatePostRequest
@@ -71,25 +71,25 @@ var file_queue_scheduler_queue_scheduler_proto_depIdxs = []int32{
 	0,  // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_queue_scheduler_queue_scheduler_proto_init() }
-func file_queue_scheduler_queue_scheduler_proto_init() {
-	if File_queue_scheduler_queue_scheduler_proto != nil {
+func init() { file_queue_scheduler_queue_scheduler_queue_scheduler_proto_init() }
+func file_queue_scheduler_queue_scheduler_queue_scheduler_proto_init() {
+	if File_queue_scheduler_queue_scheduler_queue_scheduler_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_queue_scheduler_queue_scheduler_proto_rawDesc), len(file_queue_scheduler_queue_scheduler_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_queue_scheduler_queue_scheduler_queue_scheduler_proto_rawDesc), len(file_queue_scheduler_queue_scheduler_queue_scheduler_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_queue_scheduler_queue_scheduler_proto_goTypes,
-		DependencyIndexes: file_queue_scheduler_queue_scheduler_proto_depIdxs,
+		GoTypes:           file_queue_scheduler_queue_scheduler_queue_scheduler_proto_goTypes,
+		DependencyIndexes: file_queue_scheduler_queue_scheduler_queue_scheduler_proto_depIdxs,
 	}.Build()
-	File_queue_scheduler_queue_scheduler_proto = out.File
-	file_queue_scheduler_queue_scheduler_proto_goTypes = nil
-	file_queue_scheduler_queue_scheduler_proto_depIdxs = nil
+	File_queue_scheduler_queue_scheduler_queue_scheduler_proto = out.File
+	file_queue_scheduler_queue_scheduler_queue_scheduler_proto_goTypes = nil
+	file_queue_scheduler_queue_scheduler_queue_scheduler_proto_depIdxs = nil
 }

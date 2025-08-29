@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: queue_scheduler/queue_scheduler.proto
+// source: queue_scheduler/queue_scheduler/queue_scheduler.proto
 
 package queue_scheduler_pb
 
@@ -308,5 +308,5 @@ var Queuescheduler_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "queue_scheduler/queue_scheduler.proto",
+	Metadata: "queue_scheduler/queue_scheduler/queue_scheduler.proto",
 }

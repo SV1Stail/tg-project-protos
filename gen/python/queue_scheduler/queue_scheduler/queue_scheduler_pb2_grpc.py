@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from queue_scheduler import publish_post_pb2 as queue__scheduler_dot_publish__post__pb2
+from queue_scheduler.publish_post import publish_post_pb2 as queue__scheduler_dot_publish__post_dot_publish__post__pb2
 
 
 class QueueschedulerStub(object):
@@ -16,33 +16,33 @@ class QueueschedulerStub(object):
         """
         self.CreatePost = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/CreatePost',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.CreatePostRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.CreatePostResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostResponse.FromString,
                 )
         self.CreatePostSomeChannels = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/CreatePostSomeChannels',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsResponse.FromString,
                 )
         self.UpdatePost = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/UpdatePost',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.UpdatePostRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.UpdatePostResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostResponse.FromString,
                 )
         self.DeletePost = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/DeletePost',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.DeletePostRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.DeletePostResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostResponse.FromString,
                 )
         self.GetPost = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/GetPost',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.GetPostRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.GetPostResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostResponse.FromString,
                 )
         self.GetPostsForChannel = channel.unary_unary(
                 '/queue_scheduler.Queuescheduler/GetPostsForChannel',
-                request_serializer=queue__scheduler_dot_publish__post__pb2.GetPostsForChannelRequest.SerializeToString,
-                response_deserializer=queue__scheduler_dot_publish__post__pb2.GetPostsForChannelResponse.FromString,
+                request_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelRequest.SerializeToString,
+                response_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelResponse.FromString,
                 )
 
 
@@ -90,33 +90,33 @@ def add_QueueschedulerServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreatePost': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePost,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.CreatePostRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.CreatePostResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostResponse.SerializeToString,
             ),
             'CreatePostSomeChannels': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePostSomeChannels,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsResponse.SerializeToString,
             ),
             'UpdatePost': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePost,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.UpdatePostRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.UpdatePostResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostResponse.SerializeToString,
             ),
             'DeletePost': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePost,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.DeletePostRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.DeletePostResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostResponse.SerializeToString,
             ),
             'GetPost': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPost,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.GetPostRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.GetPostResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostResponse.SerializeToString,
             ),
             'GetPostsForChannel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPostsForChannel,
-                    request_deserializer=queue__scheduler_dot_publish__post__pb2.GetPostsForChannelRequest.FromString,
-                    response_serializer=queue__scheduler_dot_publish__post__pb2.GetPostsForChannelResponse.SerializeToString,
+                    request_deserializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelRequest.FromString,
+                    response_serializer=queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -139,8 +139,8 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/CreatePost',
-            queue__scheduler_dot_publish__post__pb2.CreatePostRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.CreatePostResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -155,8 +155,8 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/CreatePostSomeChannels',
-            queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.CreatePostSomeChannelsResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.CreatePostSomeChannelsResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -171,8 +171,8 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/UpdatePost',
-            queue__scheduler_dot_publish__post__pb2.UpdatePostRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.UpdatePostResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.UpdatePostResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -187,8 +187,8 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/DeletePost',
-            queue__scheduler_dot_publish__post__pb2.DeletePostRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.DeletePostResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.DeletePostResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -203,8 +203,8 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/GetPost',
-            queue__scheduler_dot_publish__post__pb2.GetPostRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.GetPostResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -219,7 +219,7 @@ class Queuescheduler(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/queue_scheduler.Queuescheduler/GetPostsForChannel',
-            queue__scheduler_dot_publish__post__pb2.GetPostsForChannelRequest.SerializeToString,
-            queue__scheduler_dot_publish__post__pb2.GetPostsForChannelResponse.FromString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelRequest.SerializeToString,
+            queue__scheduler_dot_publish__post_dot_publish__post__pb2.GetPostsForChannelResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
