@@ -11,7 +11,7 @@ generate-go:
 		--go_out=$(GO_OUT) --go_opt=paths=source_relative \
 		--go-grpc_out=$(GO_OUT) --go-grpc_opt=paths=source_relative \
 	$(PROTO_FILES)
-	cd gen/go && go mod tidy
+	cd gen/go && go mod tidy && go mod vendor
 
 generate-py:
 	protoc -I ${PROTO_DIR} \
@@ -24,5 +24,5 @@ generate-py:
 	touch "${PY_OUT}/queue_scheduler/__init__.py" 
 
 clean:
-	rm -rf $(GO_OUT)/queue_scheduler $(GO_OUT)/publisher   
+	rm -rf $(GO_OUT)/queue_scheduler $(GO_OUT)/publisher $(GO_OUT)/vendor
 	rm -rf ${PY_OUT}/queue_scheduler ${PY_OUT}/publisher
