@@ -8,7 +8,6 @@ package publisher_pb
 
 import (
 	context "context"
-	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -28,8 +27,8 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PublisherClient interface {
-	PublishScheduled(ctx context.Context, in *PublishScheduledRequest, opts ...grpc.CallOption) (*empty.Empty, error)
-	PublishNow(ctx context.Context, in *PublishNowRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+	PublishScheduled(ctx context.Context, in *PublishScheduledRequest, opts ...grpc.CallOption) (*PublishScheduledResponse, error)
+	PublishNow(ctx context.Context, in *PublishNowRequest, opts ...grpc.CallOption) (*PublishNowResponse, error)
 }
 
 type publisherClient struct {
@@ -40,9 +39,9 @@ func NewPublisherClient(cc grpc.ClientConnInterface) PublisherClient {
 	return &publisherClient{cc}
 }
 
-func (c *publisherClient) PublishScheduled(ctx context.Context, in *PublishScheduledRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *publisherClient) PublishScheduled(ctx context.Context, in *PublishScheduledRequest, opts ...grpc.CallOption) (*PublishScheduledResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(empty.Empty)
+	out := new(PublishScheduledResponse)
 	err := c.cc.Invoke(ctx, Publisher_PublishScheduled_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -50,9 +49,9 @@ func (c *publisherClient) PublishScheduled(ctx context.Context, in *PublishSched
 	return out, nil
 }
 
-func (c *publisherClient) PublishNow(ctx context.Context, in *PublishNowRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *publisherClient) PublishNow(ctx context.Context, in *PublishNowRequest, opts ...grpc.CallOption) (*PublishNowResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(empty.Empty)
+	out := new(PublishNowResponse)
 	err := c.cc.Invoke(ctx, Publisher_PublishNow_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -64,8 +63,8 @@ func (c *publisherClient) PublishNow(ctx context.Context, in *PublishNowRequest,
 // All implementations must embed UnimplementedPublisherServer
 // for forward compatibility.
 type PublisherServer interface {
-	PublishScheduled(context.Context, *PublishScheduledRequest) (*empty.Empty, error)
-	PublishNow(context.Context, *PublishNowRequest) (*empty.Empty, error)
+	PublishScheduled(context.Context, *PublishScheduledRequest) (*PublishScheduledResponse, error)
+	PublishNow(context.Context, *PublishNowRequest) (*PublishNowResponse, error)
 	mustEmbedUnimplementedPublisherServer()
 }
 
@@ -76,10 +75,10 @@ type PublisherServer interface {
 // pointer dereference when methods are called.
 type UnimplementedPublisherServer struct{}
 
-func (UnimplementedPublisherServer) PublishScheduled(context.Context, *PublishScheduledRequest) (*empty.Empty, error) {
+func (UnimplementedPublisherServer) PublishScheduled(context.Context, *PublishScheduledRequest) (*PublishScheduledResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublishScheduled not implemented")
 }
-func (UnimplementedPublisherServer) PublishNow(context.Context, *PublishNowRequest) (*empty.Empty, error) {
+func (UnimplementedPublisherServer) PublishNow(context.Context, *PublishNowRequest) (*PublishNowResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PublishNow not implemented")
 }
 func (UnimplementedPublisherServer) mustEmbedUnimplementedPublisherServer() {}

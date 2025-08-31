@@ -2,7 +2,6 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from publisher import publisher_pb2 as publisher_dot_publisher__pb2
 
 
@@ -18,12 +17,12 @@ class PublisherStub(object):
         self.PublishScheduled = channel.unary_unary(
                 '/publisher.Publisher/PublishScheduled',
                 request_serializer=publisher_dot_publisher__pb2.PublishScheduledRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=publisher_dot_publisher__pb2.PublishScheduledResponse.FromString,
                 )
         self.PublishNow = channel.unary_unary(
                 '/publisher.Publisher/PublishNow',
                 request_serializer=publisher_dot_publisher__pb2.PublishNowRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=publisher_dot_publisher__pb2.PublishNowResponse.FromString,
                 )
 
 
@@ -48,12 +47,12 @@ def add_PublisherServicer_to_server(servicer, server):
             'PublishScheduled': grpc.unary_unary_rpc_method_handler(
                     servicer.PublishScheduled,
                     request_deserializer=publisher_dot_publisher__pb2.PublishScheduledRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=publisher_dot_publisher__pb2.PublishScheduledResponse.SerializeToString,
             ),
             'PublishNow': grpc.unary_unary_rpc_method_handler(
                     servicer.PublishNow,
                     request_deserializer=publisher_dot_publisher__pb2.PublishNowRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=publisher_dot_publisher__pb2.PublishNowResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -77,7 +76,7 @@ class Publisher(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/publisher.Publisher/PublishScheduled',
             publisher_dot_publisher__pb2.PublishScheduledRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            publisher_dot_publisher__pb2.PublishScheduledResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -93,6 +92,6 @@ class Publisher(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/publisher.Publisher/PublishNow',
             publisher_dot_publisher__pb2.PublishNowRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            publisher_dot_publisher__pb2.PublishNowResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

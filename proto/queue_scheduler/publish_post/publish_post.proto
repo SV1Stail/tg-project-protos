@@ -32,7 +32,8 @@ message CreatePostRequest {
     google.protobuf.Timestamp publish_at = 3;
 }
 message CreatePostResponse { 
-    PublishPost publishPost = 1;
+    // created Object identifier
+    string id = 1;
 }
 
 message UpdatePostRequest {
@@ -46,7 +47,8 @@ message UpdatePostRequest {
     google.protobuf.Timestamp publish_at = 4;
 }
 message UpdatePostResponse { 
-    PublishPost publishPost = 1;
+    // updated Objects identifier
+    string id = 1;
 }
 
 message DeletePostRequest {
@@ -54,7 +56,8 @@ message DeletePostRequest {
     string id = 1;
 }
 message DeletePostResponse {
-    PublishPost publishPost = 1;
+    // deleted Objects identifier
+    string id = 1;
 }
 
 message GetPostRequest {
@@ -62,7 +65,8 @@ message GetPostRequest {
     string id = 1;
 }
 message GetPostResponse {
-    PublishPost publishPost = 1;
+    // get Object
+    PublishPost publish_post = 1;
 }
 
 message GetPostsForChannelRequest {
@@ -70,8 +74,8 @@ message GetPostsForChannelRequest {
     string publish_channel = 1;
 }
 message GetPostsForChannelResponse {
-    // publishPosts array
-    repeated PublishPost publishPosts = 1;
+    // get Objects array
+    repeated PublishPost publish_posts = 1;
 }
 
 message CreatePostSomeChannelsRequest {
@@ -83,5 +87,6 @@ message CreatePostSomeChannelsRequest {
     google.protobuf.Timestamp publish_at = 3;
 }
 message CreatePostSomeChannelsResponse { 
-    repeated PublishPost publishPosts = 1;
+    // created Objects identifiers
+    repeated string ids = 1;
 }
