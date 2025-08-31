@@ -12,7 +12,7 @@ message PublishPost {
     // channel to publish
     string publish_channel = 2;
     // Object text or other info in body
-    string data = 3;
+    PublishPostData data = 3;
     // Object status
     string status = 4;
     // Object publishing time
@@ -23,6 +23,12 @@ message PublishPost {
     google.protobuf.Timestamp updated_time = 7;
     // retries attempts
     int32 attempts = 8;
+}
+
+message PublishPostData {
+    string title = 1;
+    string body = 2;
+    string post_url = 3;
 }
 
 message CreatePostRequest {

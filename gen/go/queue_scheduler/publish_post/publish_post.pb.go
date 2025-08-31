@@ -29,7 +29,7 @@ type PublishPost struct {
 	// channel to publish
 	PublishChannel string `protobuf:"bytes,2,opt,name=publish_channel,json=publishChannel,proto3" json:"publish_channel,omitempty"`
 	// Object text or other info in body
-	Data string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Data *PublishPostData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	// Object status
 	Status string `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
 	// Object publishing time
@@ -88,11 +88,11 @@ func (x *PublishPost) GetPublishChannel() string {
 	return ""
 }
 
-func (x *PublishPost) GetData() string {
+func (x *PublishPost) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *PublishPost) GetStatus() string {
@@ -130,6 +130,66 @@ func (x *PublishPost) GetAttempts() int32 {
 	return 0
 }
 
+type PublishPostData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	PostUrl       string                 `protobuf:"bytes,3,opt,name=post_url,json=postUrl,proto3" json:"post_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishPostData) Reset() {
+	*x = PublishPostData{}
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishPostData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishPostData) ProtoMessage() {}
+
+func (x *PublishPostData) ProtoReflect() protoreflect.Message {
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishPostData.ProtoReflect.Descriptor instead.
+func (*PublishPostData) Descriptor() ([]byte, []int) {
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PublishPostData) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *PublishPostData) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *PublishPostData) GetPostUrl() string {
+	if x != nil {
+		return x.PostUrl
+	}
+	return ""
+}
+
 type CreatePostRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// channel to post
@@ -144,7 +204,7 @@ type CreatePostRequest struct {
 
 func (x *CreatePostRequest) Reset() {
 	*x = CreatePostRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[1]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -156,7 +216,7 @@ func (x *CreatePostRequest) String() string {
 func (*CreatePostRequest) ProtoMessage() {}
 
 func (x *CreatePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[1]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +229,7 @@ func (x *CreatePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostRequest.ProtoReflect.Descriptor instead.
 func (*CreatePostRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{1}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreatePostRequest) GetPublishChannel() string {
@@ -203,7 +263,7 @@ type CreatePostResponse struct {
 
 func (x *CreatePostResponse) Reset() {
 	*x = CreatePostResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[2]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -215,7 +275,7 @@ func (x *CreatePostResponse) String() string {
 func (*CreatePostResponse) ProtoMessage() {}
 
 func (x *CreatePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[2]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -228,7 +288,7 @@ func (x *CreatePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostResponse.ProtoReflect.Descriptor instead.
 func (*CreatePostResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{2}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreatePostResponse) GetId() string {
@@ -254,7 +314,7 @@ type UpdatePostRequest struct {
 
 func (x *UpdatePostRequest) Reset() {
 	*x = UpdatePostRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[3]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -266,7 +326,7 @@ func (x *UpdatePostRequest) String() string {
 func (*UpdatePostRequest) ProtoMessage() {}
 
 func (x *UpdatePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[3]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -279,7 +339,7 @@ func (x *UpdatePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePostRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{3}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdatePostRequest) GetId() string {
@@ -320,7 +380,7 @@ type UpdatePostResponse struct {
 
 func (x *UpdatePostResponse) Reset() {
 	*x = UpdatePostResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[4]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -332,7 +392,7 @@ func (x *UpdatePostResponse) String() string {
 func (*UpdatePostResponse) ProtoMessage() {}
 
 func (x *UpdatePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[4]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +405,7 @@ func (x *UpdatePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePostResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{4}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdatePostResponse) GetId() string {
@@ -365,7 +425,7 @@ type DeletePostRequest struct {
 
 func (x *DeletePostRequest) Reset() {
 	*x = DeletePostRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[5]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -377,7 +437,7 @@ func (x *DeletePostRequest) String() string {
 func (*DeletePostRequest) ProtoMessage() {}
 
 func (x *DeletePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[5]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -390,7 +450,7 @@ func (x *DeletePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostRequest.ProtoReflect.Descriptor instead.
 func (*DeletePostRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{5}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DeletePostRequest) GetId() string {
@@ -410,7 +470,7 @@ type DeletePostResponse struct {
 
 func (x *DeletePostResponse) Reset() {
 	*x = DeletePostResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[6]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -422,7 +482,7 @@ func (x *DeletePostResponse) String() string {
 func (*DeletePostResponse) ProtoMessage() {}
 
 func (x *DeletePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[6]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +495,7 @@ func (x *DeletePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostResponse.ProtoReflect.Descriptor instead.
 func (*DeletePostResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{6}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeletePostResponse) GetId() string {
@@ -455,7 +515,7 @@ type GetPostRequest struct {
 
 func (x *GetPostRequest) Reset() {
 	*x = GetPostRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[7]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -467,7 +527,7 @@ func (x *GetPostRequest) String() string {
 func (*GetPostRequest) ProtoMessage() {}
 
 func (x *GetPostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[7]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -480,7 +540,7 @@ func (x *GetPostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostRequest.ProtoReflect.Descriptor instead.
 func (*GetPostRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{7}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetPostRequest) GetId() string {
@@ -500,7 +560,7 @@ type GetPostResponse struct {
 
 func (x *GetPostResponse) Reset() {
 	*x = GetPostResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[8]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -512,7 +572,7 @@ func (x *GetPostResponse) String() string {
 func (*GetPostResponse) ProtoMessage() {}
 
 func (x *GetPostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[8]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -525,7 +585,7 @@ func (x *GetPostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostResponse.ProtoReflect.Descriptor instead.
 func (*GetPostResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{8}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetPostResponse) GetPublishPost() *PublishPost {
@@ -545,7 +605,7 @@ type GetPostsForChannelRequest struct {
 
 func (x *GetPostsForChannelRequest) Reset() {
 	*x = GetPostsForChannelRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[9]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -557,7 +617,7 @@ func (x *GetPostsForChannelRequest) String() string {
 func (*GetPostsForChannelRequest) ProtoMessage() {}
 
 func (x *GetPostsForChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[9]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -570,7 +630,7 @@ func (x *GetPostsForChannelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostsForChannelRequest.ProtoReflect.Descriptor instead.
 func (*GetPostsForChannelRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{9}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetPostsForChannelRequest) GetPublishChannel() string {
@@ -590,7 +650,7 @@ type GetPostsForChannelResponse struct {
 
 func (x *GetPostsForChannelResponse) Reset() {
 	*x = GetPostsForChannelResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[10]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -602,7 +662,7 @@ func (x *GetPostsForChannelResponse) String() string {
 func (*GetPostsForChannelResponse) ProtoMessage() {}
 
 func (x *GetPostsForChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[10]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -615,7 +675,7 @@ func (x *GetPostsForChannelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPostsForChannelResponse.ProtoReflect.Descriptor instead.
 func (*GetPostsForChannelResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{10}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *GetPostsForChannelResponse) GetPublishPosts() []*PublishPost {
@@ -639,7 +699,7 @@ type CreatePostSomeChannelsRequest struct {
 
 func (x *CreatePostSomeChannelsRequest) Reset() {
 	*x = CreatePostSomeChannelsRequest{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[11]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -651,7 +711,7 @@ func (x *CreatePostSomeChannelsRequest) String() string {
 func (*CreatePostSomeChannelsRequest) ProtoMessage() {}
 
 func (x *CreatePostSomeChannelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[11]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +724,7 @@ func (x *CreatePostSomeChannelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostSomeChannelsRequest.ProtoReflect.Descriptor instead.
 func (*CreatePostSomeChannelsRequest) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{11}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *CreatePostSomeChannelsRequest) GetPublishChannels() []string {
@@ -698,7 +758,7 @@ type CreatePostSomeChannelsResponse struct {
 
 func (x *CreatePostSomeChannelsResponse) Reset() {
 	*x = CreatePostSomeChannelsResponse{}
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[12]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -710,7 +770,7 @@ func (x *CreatePostSomeChannelsResponse) String() string {
 func (*CreatePostSomeChannelsResponse) ProtoMessage() {}
 
 func (x *CreatePostSomeChannelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[12]
+	mi := &file_queue_scheduler_publish_post_publish_post_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -723,7 +783,7 @@ func (x *CreatePostSomeChannelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostSomeChannelsResponse.ProtoReflect.Descriptor instead.
 func (*CreatePostSomeChannelsResponse) Descriptor() ([]byte, []int) {
-	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{12}
+	return file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *CreatePostSomeChannelsResponse) GetIds() []string {
@@ -737,17 +797,21 @@ var File_queue_scheduler_publish_post_publish_post_proto protoreflect.FileDescri
 
 const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\n" +
-	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc7\x02\n" +
+	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\x02\n" +
 	"\vPublishPost\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
-	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
-	"\x04data\x18\x03 \x01(\tR\x04data\x12\x16\n" +
+	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x121\n" +
+	"\x04data\x18\x03 \x01(\v2\x1d.publish_post.PublishPostDataR\x04data\x12\x16\n" +
 	"\x06status\x18\x04 \x01(\tR\x06status\x129\n" +
 	"\n" +
 	"publish_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\x12=\n" +
 	"\fcreated_time\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vcreatedTime\x12=\n" +
 	"\fupdated_time\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vupdatedTime\x12\x1a\n" +
-	"\battempts\x18\b \x01(\x05R\battempts\"\x8b\x01\n" +
+	"\battempts\x18\b \x01(\x05R\battempts\"V\n" +
+	"\x0fPublishPostData\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\x12\x19\n" +
+	"\bpost_url\x18\x03 \x01(\tR\apostUrl\"\x8b\x01\n" +
 	"\x11CreatePostRequest\x12'\n" +
 	"\x0fpublish_channel\x18\x01 \x01(\tR\x0epublishChannel\x12\x12\n" +
 	"\x04data\x18\x02 \x01(\tR\x04data\x129\n" +
@@ -795,37 +859,39 @@ func file_queue_scheduler_publish_post_publish_post_proto_rawDescGZIP() []byte {
 	return file_queue_scheduler_publish_post_publish_post_proto_rawDescData
 }
 
-var file_queue_scheduler_publish_post_publish_post_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_queue_scheduler_publish_post_publish_post_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_queue_scheduler_publish_post_publish_post_proto_goTypes = []any{
 	(*PublishPost)(nil),                    // 0: publish_post.PublishPost
-	(*CreatePostRequest)(nil),              // 1: publish_post.CreatePostRequest
-	(*CreatePostResponse)(nil),             // 2: publish_post.CreatePostResponse
-	(*UpdatePostRequest)(nil),              // 3: publish_post.UpdatePostRequest
-	(*UpdatePostResponse)(nil),             // 4: publish_post.UpdatePostResponse
-	(*DeletePostRequest)(nil),              // 5: publish_post.DeletePostRequest
-	(*DeletePostResponse)(nil),             // 6: publish_post.DeletePostResponse
-	(*GetPostRequest)(nil),                 // 7: publish_post.GetPostRequest
-	(*GetPostResponse)(nil),                // 8: publish_post.GetPostResponse
-	(*GetPostsForChannelRequest)(nil),      // 9: publish_post.GetPostsForChannelRequest
-	(*GetPostsForChannelResponse)(nil),     // 10: publish_post.GetPostsForChannelResponse
-	(*CreatePostSomeChannelsRequest)(nil),  // 11: publish_post.CreatePostSomeChannelsRequest
-	(*CreatePostSomeChannelsResponse)(nil), // 12: publish_post.CreatePostSomeChannelsResponse
-	(*timestamp.Timestamp)(nil),            // 13: google.protobuf.Timestamp
+	(*PublishPostData)(nil),                // 1: publish_post.PublishPostData
+	(*CreatePostRequest)(nil),              // 2: publish_post.CreatePostRequest
+	(*CreatePostResponse)(nil),             // 3: publish_post.CreatePostResponse
+	(*UpdatePostRequest)(nil),              // 4: publish_post.UpdatePostRequest
+	(*UpdatePostResponse)(nil),             // 5: publish_post.UpdatePostResponse
+	(*DeletePostRequest)(nil),              // 6: publish_post.DeletePostRequest
+	(*DeletePostResponse)(nil),             // 7: publish_post.DeletePostResponse
+	(*GetPostRequest)(nil),                 // 8: publish_post.GetPostRequest
+	(*GetPostResponse)(nil),                // 9: publish_post.GetPostResponse
+	(*GetPostsForChannelRequest)(nil),      // 10: publish_post.GetPostsForChannelRequest
+	(*GetPostsForChannelResponse)(nil),     // 11: publish_post.GetPostsForChannelResponse
+	(*CreatePostSomeChannelsRequest)(nil),  // 12: publish_post.CreatePostSomeChannelsRequest
+	(*CreatePostSomeChannelsResponse)(nil), // 13: publish_post.CreatePostSomeChannelsResponse
+	(*timestamp.Timestamp)(nil),            // 14: google.protobuf.Timestamp
 }
 var file_queue_scheduler_publish_post_publish_post_proto_depIdxs = []int32{
-	13, // 0: publish_post.PublishPost.publish_at:type_name -> google.protobuf.Timestamp
-	13, // 1: publish_post.PublishPost.created_time:type_name -> google.protobuf.Timestamp
-	13, // 2: publish_post.PublishPost.updated_time:type_name -> google.protobuf.Timestamp
-	13, // 3: publish_post.CreatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
-	13, // 4: publish_post.UpdatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
-	0,  // 5: publish_post.GetPostResponse.publish_post:type_name -> publish_post.PublishPost
-	0,  // 6: publish_post.GetPostsForChannelResponse.publish_posts:type_name -> publish_post.PublishPost
-	13, // 7: publish_post.CreatePostSomeChannelsRequest.publish_at:type_name -> google.protobuf.Timestamp
-	8,  // [8:8] is the sub-list for method output_type
-	8,  // [8:8] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	1,  // 0: publish_post.PublishPost.data:type_name -> publish_post.PublishPostData
+	14, // 1: publish_post.PublishPost.publish_at:type_name -> google.protobuf.Timestamp
+	14, // 2: publish_post.PublishPost.created_time:type_name -> google.protobuf.Timestamp
+	14, // 3: publish_post.PublishPost.updated_time:type_name -> google.protobuf.Timestamp
+	14, // 4: publish_post.CreatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
+	14, // 5: publish_post.UpdatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
+	0,  // 6: publish_post.GetPostResponse.publish_post:type_name -> publish_post.PublishPost
+	0,  // 7: publish_post.GetPostsForChannelResponse.publish_posts:type_name -> publish_post.PublishPost
+	14, // 8: publish_post.CreatePostSomeChannelsRequest.publish_at:type_name -> google.protobuf.Timestamp
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_queue_scheduler_publish_post_publish_post_proto_init() }
@@ -839,7 +905,7 @@ func file_queue_scheduler_publish_post_publish_post_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_queue_scheduler_publish_post_publish_post_proto_rawDesc), len(file_queue_scheduler_publish_post_publish_post_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
