@@ -37,7 +37,9 @@ type PublishPost struct {
 	// Object creation time
 	CreatedTime *timestamp.Timestamp `protobuf:"bytes,6,opt,name=created_time,json=createdTime,proto3" json:"created_time,omitempty"`
 	// Object last updated time
-	UpdatedTime   *timestamp.Timestamp `protobuf:"bytes,7,opt,name=updated_time,json=updatedTime,proto3" json:"updated_time,omitempty"`
+	UpdatedTime *timestamp.Timestamp `protobuf:"bytes,7,opt,name=updated_time,json=updatedTime,proto3" json:"updated_time,omitempty"`
+	// retries attempts
+	Attempts      int32 `protobuf:"varint,8,opt,name=attempts,proto3" json:"attempts,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -119,6 +121,13 @@ func (x *PublishPost) GetUpdatedTime() *timestamp.Timestamp {
 		return x.UpdatedTime
 	}
 	return nil
+}
+
+func (x *PublishPost) GetAttempts() int32 {
+	if x != nil {
+		return x.Attempts
+	}
+	return 0
 }
 
 type CreatePostRequest struct {
@@ -728,7 +737,7 @@ var File_queue_scheduler_publish_post_publish_post_proto protoreflect.FileDescri
 
 const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\n" +
-	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xab\x02\n" +
+	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc7\x02\n" +
 	"\vPublishPost\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
 	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
@@ -737,7 +746,8 @@ const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\n" +
 	"publish_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\x12=\n" +
 	"\fcreated_time\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vcreatedTime\x12=\n" +
-	"\fupdated_time\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vupdatedTime\"\x8b\x01\n" +
+	"\fupdated_time\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vupdatedTime\x12\x1a\n" +
+	"\battempts\x18\b \x01(\x05R\battempts\"\x8b\x01\n" +
 	"\x11CreatePostRequest\x12'\n" +
 	"\x0fpublish_channel\x18\x01 \x01(\tR\x0epublishChannel\x12\x12\n" +
 	"\x04data\x18\x02 \x01(\tR\x04data\x129\n" +

@@ -21,6 +21,8 @@ message PublishPost {
     google.protobuf.Timestamp created_time = 6;
     // Object last updated time
     google.protobuf.Timestamp updated_time = 7;
+    // retries attempts
+    int32 attempts = 8;
 }
 
 message CreatePostRequest {
