@@ -35,9 +35,9 @@ type PublishPost struct {
 	// Object publishing time
 	PublishAt *timestamp.Timestamp `protobuf:"bytes,5,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	// Object creation time
-	CreatedTime *timestamp.Timestamp `protobuf:"bytes,6,opt,name=created_time,json=createdTime,proto3" json:"created_time,omitempty"`
+	CreatedAt *timestamp.Timestamp `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// Object last updated time
-	UpdatedTime *timestamp.Timestamp `protobuf:"bytes,7,opt,name=updated_time,json=updatedTime,proto3" json:"updated_time,omitempty"`
+	UpdatedAt *timestamp.Timestamp `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	// retries attempts
 	Attempts      int32 `protobuf:"varint,8,opt,name=attempts,proto3" json:"attempts,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -109,16 +109,16 @@ func (x *PublishPost) GetPublishAt() *timestamp.Timestamp {
 	return nil
 }
 
-func (x *PublishPost) GetCreatedTime() *timestamp.Timestamp {
+func (x *PublishPost) GetCreatedAt() *timestamp.Timestamp {
 	if x != nil {
-		return x.CreatedTime
+		return x.CreatedAt
 	}
 	return nil
 }
 
-func (x *PublishPost) GetUpdatedTime() *timestamp.Timestamp {
+func (x *PublishPost) GetUpdatedAt() *timestamp.Timestamp {
 	if x != nil {
-		return x.UpdatedTime
+		return x.UpdatedAt
 	}
 	return nil
 }
@@ -797,16 +797,18 @@ var File_queue_scheduler_publish_post_publish_post_proto protoreflect.FileDescri
 
 const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\n" +
-	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe6\x02\n" +
+	"/queue_scheduler/publish_post/publish_post.proto\x12\fpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xde\x02\n" +
 	"\vPublishPost\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
 	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x121\n" +
 	"\x04data\x18\x03 \x01(\v2\x1d.publish_post.PublishPostDataR\x04data\x12\x16\n" +
 	"\x06status\x18\x04 \x01(\tR\x06status\x129\n" +
 	"\n" +
-	"publish_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\x12=\n" +
-	"\fcreated_time\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vcreatedTime\x12=\n" +
-	"\fupdated_time\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vupdatedTime\x12\x1a\n" +
+	"publish_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\x129\n" +
+	"\n" +
+	"created_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1a\n" +
 	"\battempts\x18\b \x01(\x05R\battempts\"V\n" +
 	"\x0fPublishPostData\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
@@ -880,8 +882,8 @@ var file_queue_scheduler_publish_post_publish_post_proto_goTypes = []any{
 var file_queue_scheduler_publish_post_publish_post_proto_depIdxs = []int32{
 	1,  // 0: publish_post.PublishPost.data:type_name -> publish_post.PublishPostData
 	14, // 1: publish_post.PublishPost.publish_at:type_name -> google.protobuf.Timestamp
-	14, // 2: publish_post.PublishPost.created_time:type_name -> google.protobuf.Timestamp
-	14, // 3: publish_post.PublishPost.updated_time:type_name -> google.protobuf.Timestamp
+	14, // 2: publish_post.PublishPost.created_at:type_name -> google.protobuf.Timestamp
+	14, // 3: publish_post.PublishPost.updated_at:type_name -> google.protobuf.Timestamp
 	14, // 4: publish_post.CreatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
 	14, // 5: publish_post.UpdatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
 	0,  // 6: publish_post.GetPostResponse.publish_post:type_name -> publish_post.PublishPost
