@@ -18,9 +18,9 @@ message PublishPost {
     // Object publishing time
     google.protobuf.Timestamp publish_at = 5;
     // Object creation time
-    google.protobuf.Timestamp created_time = 6;
+    google.protobuf.Timestamp created_at = 6;
     // Object last updated time
-    google.protobuf.Timestamp updated_time = 7;
+    google.protobuf.Timestamp updated_at = 7;
     // retries attempts
     int32 attempts = 8;
 }
