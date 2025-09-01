@@ -4,13 +4,12 @@ package publisher;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/duration.proto";
-import "google/protobuf/empty.proto";
 
 option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pb";
 
 service Publisher {
-    rpc PublishScheduled (PublishScheduledRequest) returns (google.protobuf.Empty);
-    rpc PublishNow (PublishNowRequest) returns (google.protobuf.Empty);
+    rpc PublishScheduled (PublishScheduledRequest) returns (PublishScheduledResponse);
+    rpc PublishNow (PublishNowRequest) returns (PublishNowResponse);
 }
 
 message PublishScheduledRequest {
@@ -25,6 +24,10 @@ message PublishScheduledRequest {
     // Object publish delay
     google.protobuf.Duration delay = 5;
 }
+message PublishScheduledResponse {
+    // Object identifier
+    string id = 1;
+}
 
 message PublishNowRequest {
     // Object identifier
@@ -35,6 +38,10 @@ message PublishNowRequest {
     string data = 3;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 4;
+}
+message PublishNowResponse {
+    // Object identifier
+    string id = 1;
 }
 
 

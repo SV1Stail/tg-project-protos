@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'ZYgithub.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/publish_post;publish_post_pb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/queue_scheduler/publish_post/publish_post.proto\x12\x0cpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe4\x01\n\x0bPublishPost\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12\x0e\n\x06status\x18\x04 \x01(\t\x12.\n\npublish_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x63reated_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cupdated_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"j\n\x11\x43reatePostRequest\x12\x17\n\x0fpublish_channel\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12.\n\npublish_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"D\n\x12\x43reatePostResponse\x12.\n\x0bpublishPost\x18\x01 \x01(\x0b\x32\x19.publish_post.PublishPost\"v\n\x11UpdatePostRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"D\n\x12UpdatePostResponse\x12.\n\x0bpublishPost\x18\x01 \x01(\x0b\x32\x19.publish_post.PublishPost\"\x1f\n\x11\x44\x65letePostRequest\x12\n\n\x02id\x18\x01 \x01(\t\"D\n\x12\x44\x65letePostResponse\x12.\n\x0bpublishPost\x18\x01 \x01(\x0b\x32\x19.publish_post.PublishPost\"\x1c\n\x0eGetPostRequest\x12\n\n\x02id\x18\x01 \x01(\t\"A\n\x0fGetPostResponse\x12.\n\x0bpublishPost\x18\x01 \x01(\x0b\x32\x19.publish_post.PublishPost\"4\n\x19GetPostsForChannelRequest\x12\x17\n\x0fpublish_channel\x18\x01 \x01(\t\"M\n\x1aGetPostsForChannelResponse\x12/\n\x0cpublishPosts\x18\x01 \x03(\x0b\x32\x19.publish_post.PublishPost\"w\n\x1d\x43reatePostSomeChannelsRequest\x12\x18\n\x10publish_channels\x18\x01 \x03(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12.\n\npublish_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Q\n\x1e\x43reatePostSomeChannelsResponse\x12/\n\x0cpublishPosts\x18\x01 \x03(\x0b\x32\x19.publish_post.PublishPostB[ZYgithub.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/publish_post;publish_post_pbb\x06proto3'
+  serialized_pb=b'\n/queue_scheduler/publish_post/publish_post.proto\x12\x0cpublish_post\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x02\n\x0bPublishPost\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12+\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1d.publish_post.PublishPostData\x12\x0e\n\x06status\x18\x04 \x01(\t\x12.\n\npublish_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61ttempts\x18\x08 \x01(\x05\"@\n\x0fPublishPostData\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x10\n\x08post_url\x18\x03 \x01(\t\"j\n\x11\x43reatePostRequest\x12\x17\n\x0fpublish_channel\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12.\n\npublish_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\" \n\x12\x43reatePostResponse\x12\n\n\x02id\x18\x01 \x01(\t\"v\n\x11UpdatePostRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\" \n\x12UpdatePostResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x1f\n\x11\x44\x65letePostRequest\x12\n\n\x02id\x18\x01 \x01(\t\" \n\x12\x44\x65letePostResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x1c\n\x0eGetPostRequest\x12\n\n\x02id\x18\x01 \x01(\t\"B\n\x0fGetPostResponse\x12/\n\x0cpublish_post\x18\x01 \x01(\x0b\x32\x19.publish_post.PublishPost\"4\n\x19GetPostsForChannelRequest\x12\x17\n\x0fpublish_channel\x18\x01 \x01(\t\"N\n\x1aGetPostsForChannelResponse\x12\x30\n\rpublish_posts\x18\x01 \x03(\x0b\x32\x19.publish_post.PublishPost\"w\n\x1d\x43reatePostSomeChannelsRequest\x12\x18\n\x10publish_channels\x18\x01 \x03(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12.\n\npublish_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"-\n\x1e\x43reatePostSomeChannelsResponse\x12\x0b\n\x03ids\x18\x01 \x03(\tB[ZYgithub.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/publish_post;publish_post_pbb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _PUBLISHPOST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='publish_post.PublishPost.data', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -71,16 +71,23 @@ _PUBLISHPOST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_time', full_name='publish_post.PublishPost.created_time', index=5,
+      name='created_at', full_name='publish_post.PublishPost.created_at', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated_time', full_name='publish_post.PublishPost.updated_time', index=6,
+      name='updated_at', full_name='publish_post.PublishPost.updated_at', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='attempts', full_name='publish_post.PublishPost.attempts', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -97,7 +104,53 @@ _PUBLISHPOST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=99,
-  serialized_end=327,
+  serialized_end=372,
+)
+
+
+_PUBLISHPOSTDATA = _descriptor.Descriptor(
+  name='PublishPostData',
+  full_name='publish_post.PublishPostData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='title', full_name='publish_post.PublishPostData.title', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='publish_post.PublishPostData.body', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='post_url', full_name='publish_post.PublishPostData.post_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=374,
+  serialized_end=438,
 )
 
 
@@ -142,8 +195,8 @@ _CREATEPOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=435,
+  serialized_start=440,
+  serialized_end=546,
 )
 
 
@@ -156,9 +209,9 @@ _CREATEPOSTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPost', full_name='publish_post.CreatePostResponse.publishPost', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='id', full_name='publish_post.CreatePostResponse.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -174,8 +227,8 @@ _CREATEPOSTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=437,
-  serialized_end=505,
+  serialized_start=548,
+  serialized_end=580,
 )
 
 
@@ -227,8 +280,8 @@ _UPDATEPOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=507,
-  serialized_end=625,
+  serialized_start=582,
+  serialized_end=700,
 )
 
 
@@ -241,9 +294,9 @@ _UPDATEPOSTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPost', full_name='publish_post.UpdatePostResponse.publishPost', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='id', full_name='publish_post.UpdatePostResponse.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -259,8 +312,8 @@ _UPDATEPOSTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=627,
-  serialized_end=695,
+  serialized_start=702,
+  serialized_end=734,
 )
 
 
@@ -291,8 +344,8 @@ _DELETEPOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=697,
-  serialized_end=728,
+  serialized_start=736,
+  serialized_end=767,
 )
 
 
@@ -305,9 +358,9 @@ _DELETEPOSTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPost', full_name='publish_post.DeletePostResponse.publishPost', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='id', full_name='publish_post.DeletePostResponse.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -323,8 +376,8 @@ _DELETEPOSTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=730,
-  serialized_end=798,
+  serialized_start=769,
+  serialized_end=801,
 )
 
 
@@ -355,8 +408,8 @@ _GETPOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=800,
-  serialized_end=828,
+  serialized_start=803,
+  serialized_end=831,
 )
 
 
@@ -369,7 +422,7 @@ _GETPOSTRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPost', full_name='publish_post.GetPostResponse.publishPost', index=0,
+      name='publish_post', full_name='publish_post.GetPostResponse.publish_post', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -387,8 +440,8 @@ _GETPOSTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=830,
-  serialized_end=895,
+  serialized_start=833,
+  serialized_end=899,
 )
 
 
@@ -419,8 +472,8 @@ _GETPOSTSFORCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=897,
-  serialized_end=949,
+  serialized_start=901,
+  serialized_end=953,
 )
 
 
@@ -433,7 +486,7 @@ _GETPOSTSFORCHANNELRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPosts', full_name='publish_post.GetPostsForChannelResponse.publishPosts', index=0,
+      name='publish_posts', full_name='publish_post.GetPostsForChannelResponse.publish_posts', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -451,8 +504,8 @@ _GETPOSTSFORCHANNELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=951,
-  serialized_end=1028,
+  serialized_start=955,
+  serialized_end=1033,
 )
 
 
@@ -497,8 +550,8 @@ _CREATEPOSTSOMECHANNELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1149,
+  serialized_start=1035,
+  serialized_end=1154,
 )
 
 
@@ -511,8 +564,8 @@ _CREATEPOSTSOMECHANNELSRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publishPosts', full_name='publish_post.CreatePostSomeChannelsResponse.publishPosts', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='ids', full_name='publish_post.CreatePostSomeChannelsResponse.ids', index=0,
+      number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -529,23 +582,21 @@ _CREATEPOSTSOMECHANNELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1151,
-  serialized_end=1232,
+  serialized_start=1156,
+  serialized_end=1201,
 )
 
+_PUBLISHPOST.fields_by_name['data'].message_type = _PUBLISHPOSTDATA
 _PUBLISHPOST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_PUBLISHPOST.fields_by_name['created_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_PUBLISHPOST.fields_by_name['updated_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_PUBLISHPOST.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_PUBLISHPOST.fields_by_name['updated_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CREATEPOSTREQUEST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_CREATEPOSTRESPONSE.fields_by_name['publishPost'].message_type = _PUBLISHPOST
 _UPDATEPOSTREQUEST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_UPDATEPOSTRESPONSE.fields_by_name['publishPost'].message_type = _PUBLISHPOST
-_DELETEPOSTRESPONSE.fields_by_name['publishPost'].message_type = _PUBLISHPOST
-_GETPOSTRESPONSE.fields_by_name['publishPost'].message_type = _PUBLISHPOST
-_GETPOSTSFORCHANNELRESPONSE.fields_by_name['publishPosts'].message_type = _PUBLISHPOST
+_GETPOSTRESPONSE.fields_by_name['publish_post'].message_type = _PUBLISHPOST
+_GETPOSTSFORCHANNELRESPONSE.fields_by_name['publish_posts'].message_type = _PUBLISHPOST
 _CREATEPOSTSOMECHANNELSREQUEST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_CREATEPOSTSOMECHANNELSRESPONSE.fields_by_name['publishPosts'].message_type = _PUBLISHPOST
 DESCRIPTOR.message_types_by_name['PublishPost'] = _PUBLISHPOST
+DESCRIPTOR.message_types_by_name['PublishPostData'] = _PUBLISHPOSTDATA
 DESCRIPTOR.message_types_by_name['CreatePostRequest'] = _CREATEPOSTREQUEST
 DESCRIPTOR.message_types_by_name['CreatePostResponse'] = _CREATEPOSTRESPONSE
 DESCRIPTOR.message_types_by_name['UpdatePostRequest'] = _UPDATEPOSTREQUEST
@@ -566,6 +617,13 @@ PublishPost = _reflection.GeneratedProtocolMessageType('PublishPost', (_message.
   # @@protoc_insertion_point(class_scope:publish_post.PublishPost)
   })
 _sym_db.RegisterMessage(PublishPost)
+
+PublishPostData = _reflection.GeneratedProtocolMessageType('PublishPostData', (_message.Message,), {
+  'DESCRIPTOR' : _PUBLISHPOSTDATA,
+  '__module__' : 'queue_scheduler.publish_post.publish_post_pb2'
+  # @@protoc_insertion_point(class_scope:publish_post.PublishPostData)
+  })
+_sym_db.RegisterMessage(PublishPostData)
 
 CreatePostRequest = _reflection.GeneratedProtocolMessageType('CreatePostRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEPOSTREQUEST,
