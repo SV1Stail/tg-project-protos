@@ -12,13 +12,22 @@ service Publisher {
     rpc PublishNow (PublishNowRequest) returns (PublishNowResponse);
 }
 
+message PublishPostData {
+    // Object title
+    string title = 1;
+    // Object text
+    string body = 2;
+    // URL on original post
+    string post_url = 3;
+}
+
 message PublishScheduledRequest {
     // Object identifier
     string id = 1;
     // channel to post
     string publish_channel = 2;
-    // Object text or other info in body
-    string data = 3;
+    // Object data
+    PublishPostData data = 3;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 4;
     // Object publish delay
@@ -34,8 +43,8 @@ message PublishNowRequest {
     string id = 1;
     // channel to post
     string publish_channel = 2;
-    // Object text or other info in body
-    string data = 3;
+    // Object data
+    PublishPostData data = 3;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 4;
 }
