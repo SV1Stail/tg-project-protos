@@ -131,10 +131,13 @@ func (x *PublishPost) GetAttempts() int32 {
 }
 
 type PublishPostData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	Body          string                 `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
-	PostUrl       string                 `protobuf:"bytes,3,opt,name=post_url,json=postUrl,proto3" json:"post_url,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Object title
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	// Object text
+	Body string `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	// URL on original post
+	PostUrl       string `protobuf:"bytes,3,opt,name=post_url,json=postUrl,proto3" json:"post_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -194,8 +197,8 @@ type CreatePostRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// channel to post
 	PublishChannel string `protobuf:"bytes,1,opt,name=publish_channel,json=publishChannel,proto3" json:"publish_channel,omitempty"`
-	// Object text or other info in body
-	Data string `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	// Object data
+	Data *PublishPostData `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
 	// Object publishing time
 	PublishAt     *timestamp.Timestamp `protobuf:"bytes,3,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -239,11 +242,11 @@ func (x *CreatePostRequest) GetPublishChannel() string {
 	return ""
 }
 
-func (x *CreatePostRequest) GetData() string {
+func (x *CreatePostRequest) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *CreatePostRequest) GetPublishAt() *timestamp.Timestamp {
@@ -304,8 +307,8 @@ type UpdatePostRequest struct {
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// channel to post
 	PublishChannel string `protobuf:"bytes,2,opt,name=publish_channel,json=publishChannel,proto3" json:"publish_channel,omitempty"`
-	// Object text or other info in body
-	Data string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	// Object data
+	Data *PublishPostData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	// Object publishing time
 	PublishAt     *timestamp.Timestamp `protobuf:"bytes,4,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -356,11 +359,11 @@ func (x *UpdatePostRequest) GetPublishChannel() string {
 	return ""
 }
 
-func (x *UpdatePostRequest) GetData() string {
+func (x *UpdatePostRequest) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *UpdatePostRequest) GetPublishAt() *timestamp.Timestamp {
@@ -689,8 +692,8 @@ type CreatePostSomeChannelsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// channels to post
 	PublishChannels []string `protobuf:"bytes,1,rep,name=publish_channels,json=publishChannels,proto3" json:"publish_channels,omitempty"`
-	// Object text or other info in body
-	Data string `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	// Object data
+	Data *PublishPostData `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
 	// Object publishing time
 	PublishAt     *timestamp.Timestamp `protobuf:"bytes,3,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -734,11 +737,11 @@ func (x *CreatePostSomeChannelsRequest) GetPublishChannels() []string {
 	return nil
 }
 
-func (x *CreatePostSomeChannelsRequest) GetData() string {
+func (x *CreatePostSomeChannelsRequest) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *CreatePostSomeChannelsRequest) GetPublishAt() *timestamp.Timestamp {
@@ -813,18 +816,18 @@ const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\x0fPublishPostData\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
 	"\x04body\x18\x02 \x01(\tR\x04body\x12\x19\n" +
-	"\bpost_url\x18\x03 \x01(\tR\apostUrl\"\x8b\x01\n" +
+	"\bpost_url\x18\x03 \x01(\tR\apostUrl\"\xaa\x01\n" +
 	"\x11CreatePostRequest\x12'\n" +
-	"\x0fpublish_channel\x18\x01 \x01(\tR\x0epublishChannel\x12\x12\n" +
-	"\x04data\x18\x02 \x01(\tR\x04data\x129\n" +
+	"\x0fpublish_channel\x18\x01 \x01(\tR\x0epublishChannel\x121\n" +
+	"\x04data\x18\x02 \x01(\v2\x1d.publish_post.PublishPostDataR\x04data\x129\n" +
 	"\n" +
 	"publish_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\"$\n" +
 	"\x12CreatePostResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x9b\x01\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\xba\x01\n" +
 	"\x11UpdatePostRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
-	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
-	"\x04data\x18\x03 \x01(\tR\x04data\x129\n" +
+	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x121\n" +
+	"\x04data\x18\x03 \x01(\v2\x1d.publish_post.PublishPostDataR\x04data\x129\n" +
 	"\n" +
 	"publish_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\"$\n" +
 	"\x12UpdatePostResponse\x12\x0e\n" +
@@ -840,10 +843,10 @@ const file_queue_scheduler_publish_post_publish_post_proto_rawDesc = "" +
 	"\x19GetPostsForChannelRequest\x12'\n" +
 	"\x0fpublish_channel\x18\x01 \x01(\tR\x0epublishChannel\"\\\n" +
 	"\x1aGetPostsForChannelResponse\x12>\n" +
-	"\rpublish_posts\x18\x01 \x03(\v2\x19.publish_post.PublishPostR\fpublishPosts\"\x99\x01\n" +
+	"\rpublish_posts\x18\x01 \x03(\v2\x19.publish_post.PublishPostR\fpublishPosts\"\xb8\x01\n" +
 	"\x1dCreatePostSomeChannelsRequest\x12)\n" +
-	"\x10publish_channels\x18\x01 \x03(\tR\x0fpublishChannels\x12\x12\n" +
-	"\x04data\x18\x02 \x01(\tR\x04data\x129\n" +
+	"\x10publish_channels\x18\x01 \x03(\tR\x0fpublishChannels\x121\n" +
+	"\x04data\x18\x02 \x01(\v2\x1d.publish_post.PublishPostDataR\x04data\x129\n" +
 	"\n" +
 	"publish_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\"2\n" +
 	"\x1eCreatePostSomeChannelsResponse\x12\x10\n" +
@@ -884,16 +887,19 @@ var file_queue_scheduler_publish_post_publish_post_proto_depIdxs = []int32{
 	14, // 1: publish_post.PublishPost.publish_at:type_name -> google.protobuf.Timestamp
 	14, // 2: publish_post.PublishPost.created_at:type_name -> google.protobuf.Timestamp
 	14, // 3: publish_post.PublishPost.updated_at:type_name -> google.protobuf.Timestamp
-	14, // 4: publish_post.CreatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
-	14, // 5: publish_post.UpdatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
-	0,  // 6: publish_post.GetPostResponse.publish_post:type_name -> publish_post.PublishPost
-	0,  // 7: publish_post.GetPostsForChannelResponse.publish_posts:type_name -> publish_post.PublishPost
-	14, // 8: publish_post.CreatePostSomeChannelsRequest.publish_at:type_name -> google.protobuf.Timestamp
-	9,  // [9:9] is the sub-list for method output_type
-	9,  // [9:9] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	1,  // 4: publish_post.CreatePostRequest.data:type_name -> publish_post.PublishPostData
+	14, // 5: publish_post.CreatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
+	1,  // 6: publish_post.UpdatePostRequest.data:type_name -> publish_post.PublishPostData
+	14, // 7: publish_post.UpdatePostRequest.publish_at:type_name -> google.protobuf.Timestamp
+	0,  // 8: publish_post.GetPostResponse.publish_post:type_name -> publish_post.PublishPost
+	0,  // 9: publish_post.GetPostsForChannelResponse.publish_posts:type_name -> publish_post.PublishPost
+	1,  // 10: publish_post.CreatePostSomeChannelsRequest.data:type_name -> publish_post.PublishPostData
+	14, // 11: publish_post.CreatePostSomeChannelsRequest.publish_at:type_name -> google.protobuf.Timestamp
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_queue_scheduler_publish_post_publish_post_proto_init() }

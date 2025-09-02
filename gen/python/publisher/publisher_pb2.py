@@ -21,11 +21,57 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'ZMgithub.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xa6\x01\n\x17PublishScheduledRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12(\n\x05\x64\x65lay\x18\x05 \x01(\x0b\x32\x19.google.protobuf.Duration\"&\n\x18PublishScheduledResponse\x12\n\n\x02id\x18\x01 \x01(\t\"v\n\x11PublishNowRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\t\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\" \n\x12PublishNowResponse\x12\n\n\x02id\x18\x01 \x01(\t2\xb3\x01\n\tPublisher\x12[\n\x10PublishScheduled\x12\".publisher.PublishScheduledRequest\x1a#.publisher.PublishScheduledResponse\x12I\n\nPublishNow\x12\x1c.publisher.PublishNowRequest\x1a\x1d.publisher.PublishNowResponseBOZMgithub.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pbb\x06proto3'
+  serialized_pb=b'\n\x19publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"@\n\x0fPublishPostData\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x10\n\x08post_url\x18\x03 \x01(\t\"\xc2\x01\n\x17PublishScheduledRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12(\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1a.publisher.PublishPostData\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12(\n\x05\x64\x65lay\x18\x05 \x01(\x0b\x32\x19.google.protobuf.Duration\"&\n\x18PublishScheduledResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x92\x01\n\x11PublishNowRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fpublish_channel\x18\x02 \x01(\t\x12(\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x1a.publisher.PublishPostData\x12.\n\npublish_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\" \n\x12PublishNowResponse\x12\n\n\x02id\x18\x01 \x01(\t2\xb3\x01\n\tPublisher\x12[\n\x10PublishScheduled\x12\".publisher.PublishScheduledRequest\x1a#.publisher.PublishScheduledResponse\x12I\n\nPublishNow\x12\x1c.publisher.PublishNowRequest\x1a\x1d.publisher.PublishNowResponseBOZMgithub.com/SV1Stail/tg-project-protos/gen/go/publisher/publisher;publisher_pbb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
 
+
+
+_PUBLISHPOSTDATA = _descriptor.Descriptor(
+  name='PublishPostData',
+  full_name='publisher.PublishPostData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='title', full_name='publisher.PublishPostData.title', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='publisher.PublishPostData.body', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='post_url', full_name='publisher.PublishPostData.post_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=105,
+  serialized_end=169,
+)
 
 
 _PUBLISHSCHEDULEDREQUEST = _descriptor.Descriptor(
@@ -52,8 +98,8 @@ _PUBLISHSCHEDULEDREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='publisher.PublishScheduledRequest.data', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -83,8 +129,8 @@ _PUBLISHSCHEDULEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=106,
-  serialized_end=272,
+  serialized_start=172,
+  serialized_end=366,
 )
 
 
@@ -115,8 +161,8 @@ _PUBLISHSCHEDULEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=274,
-  serialized_end=312,
+  serialized_start=368,
+  serialized_end=406,
 )
 
 
@@ -144,8 +190,8 @@ _PUBLISHNOWREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='publisher.PublishNowRequest.data', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -168,8 +214,8 @@ _PUBLISHNOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=314,
-  serialized_end=432,
+  serialized_start=409,
+  serialized_end=555,
 )
 
 
@@ -200,18 +246,28 @@ _PUBLISHNOWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=434,
-  serialized_end=466,
+  serialized_start=557,
+  serialized_end=589,
 )
 
+_PUBLISHSCHEDULEDREQUEST.fields_by_name['data'].message_type = _PUBLISHPOSTDATA
 _PUBLISHSCHEDULEDREQUEST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _PUBLISHSCHEDULEDREQUEST.fields_by_name['delay'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_PUBLISHNOWREQUEST.fields_by_name['data'].message_type = _PUBLISHPOSTDATA
 _PUBLISHNOWREQUEST.fields_by_name['publish_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+DESCRIPTOR.message_types_by_name['PublishPostData'] = _PUBLISHPOSTDATA
 DESCRIPTOR.message_types_by_name['PublishScheduledRequest'] = _PUBLISHSCHEDULEDREQUEST
 DESCRIPTOR.message_types_by_name['PublishScheduledResponse'] = _PUBLISHSCHEDULEDRESPONSE
 DESCRIPTOR.message_types_by_name['PublishNowRequest'] = _PUBLISHNOWREQUEST
 DESCRIPTOR.message_types_by_name['PublishNowResponse'] = _PUBLISHNOWRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+PublishPostData = _reflection.GeneratedProtocolMessageType('PublishPostData', (_message.Message,), {
+  'DESCRIPTOR' : _PUBLISHPOSTDATA,
+  '__module__' : 'publisher.publisher_pb2'
+  # @@protoc_insertion_point(class_scope:publisher.PublishPostData)
+  })
+_sym_db.RegisterMessage(PublishPostData)
 
 PublishScheduledRequest = _reflection.GeneratedProtocolMessageType('PublishScheduledRequest', (_message.Message,), {
   'DESCRIPTOR' : _PUBLISHSCHEDULEDREQUEST,
@@ -251,8 +307,8 @@ _PUBLISHER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=469,
-  serialized_end=648,
+  serialized_start=592,
+  serialized_end=771,
   methods=[
   _descriptor.MethodDescriptor(
     name='PublishScheduled',

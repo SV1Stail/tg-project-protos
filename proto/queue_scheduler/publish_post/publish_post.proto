@@ -26,16 +26,19 @@ message PublishPost {
 }
 
 message PublishPostData {
+    // Object title
     string title = 1;
+    // Object text
     string body = 2;
+    // URL on original post
     string post_url = 3;
 }
 
 message CreatePostRequest {
     // channel to post
     string publish_channel = 1;
-    // Object text or other info in body
-    string data = 2;
+    // Object data
+    PublishPostData data = 2;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 3;
 }
@@ -49,8 +52,8 @@ message UpdatePostRequest {
     string id = 1;
     // channel to post
     string publish_channel = 2;
-    // Object text or other info in body
-    string data = 3;
+    // Object data
+    PublishPostData data = 3;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 4;
 }
@@ -89,8 +92,8 @@ message GetPostsForChannelResponse {
 message CreatePostSomeChannelsRequest {
     // channels to post
     repeated string publish_channels = 1;
-    // Object text or other info in body
-    string data = 2;
+    // Object data
+    PublishPostData data = 2;
     // Object publishing time
     google.protobuf.Timestamp publish_at = 3;
 }

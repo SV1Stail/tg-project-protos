@@ -23,14 +23,77 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type PublishPostData struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Object title
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	// Object text
+	Body string `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	// URL on original post
+	PostUrl       string `protobuf:"bytes,3,opt,name=post_url,json=postUrl,proto3" json:"post_url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishPostData) Reset() {
+	*x = PublishPostData{}
+	mi := &file_publisher_publisher_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishPostData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishPostData) ProtoMessage() {}
+
+func (x *PublishPostData) ProtoReflect() protoreflect.Message {
+	mi := &file_publisher_publisher_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishPostData.ProtoReflect.Descriptor instead.
+func (*PublishPostData) Descriptor() ([]byte, []int) {
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *PublishPostData) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *PublishPostData) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *PublishPostData) GetPostUrl() string {
+	if x != nil {
+		return x.PostUrl
+	}
+	return ""
+}
+
 type PublishScheduledRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Object identifier
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// channel to post
 	PublishChannel string `protobuf:"bytes,2,opt,name=publish_channel,json=publishChannel,proto3" json:"publish_channel,omitempty"`
-	// Object text or other info in body
-	Data string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	// Object data
+	Data *PublishPostData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	// Object publishing time
 	PublishAt *timestamp.Timestamp `protobuf:"bytes,4,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	// Object publish delay
@@ -41,7 +104,7 @@ type PublishScheduledRequest struct {
 
 func (x *PublishScheduledRequest) Reset() {
 	*x = PublishScheduledRequest{}
-	mi := &file_publisher_publisher_proto_msgTypes[0]
+	mi := &file_publisher_publisher_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53,7 +116,7 @@ func (x *PublishScheduledRequest) String() string {
 func (*PublishScheduledRequest) ProtoMessage() {}
 
 func (x *PublishScheduledRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_publisher_publisher_proto_msgTypes[0]
+	mi := &file_publisher_publisher_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -66,7 +129,7 @@ func (x *PublishScheduledRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishScheduledRequest.ProtoReflect.Descriptor instead.
 func (*PublishScheduledRequest) Descriptor() ([]byte, []int) {
-	return file_publisher_publisher_proto_rawDescGZIP(), []int{0}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PublishScheduledRequest) GetId() string {
@@ -83,11 +146,11 @@ func (x *PublishScheduledRequest) GetPublishChannel() string {
 	return ""
 }
 
-func (x *PublishScheduledRequest) GetData() string {
+func (x *PublishScheduledRequest) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *PublishScheduledRequest) GetPublishAt() *timestamp.Timestamp {
@@ -114,7 +177,7 @@ type PublishScheduledResponse struct {
 
 func (x *PublishScheduledResponse) Reset() {
 	*x = PublishScheduledResponse{}
-	mi := &file_publisher_publisher_proto_msgTypes[1]
+	mi := &file_publisher_publisher_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -126,7 +189,7 @@ func (x *PublishScheduledResponse) String() string {
 func (*PublishScheduledResponse) ProtoMessage() {}
 
 func (x *PublishScheduledResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_publisher_publisher_proto_msgTypes[1]
+	mi := &file_publisher_publisher_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -139,7 +202,7 @@ func (x *PublishScheduledResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishScheduledResponse.ProtoReflect.Descriptor instead.
 func (*PublishScheduledResponse) Descriptor() ([]byte, []int) {
-	return file_publisher_publisher_proto_rawDescGZIP(), []int{1}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PublishScheduledResponse) GetId() string {
@@ -155,8 +218,8 @@ type PublishNowRequest struct {
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// channel to post
 	PublishChannel string `protobuf:"bytes,2,opt,name=publish_channel,json=publishChannel,proto3" json:"publish_channel,omitempty"`
-	// Object text or other info in body
-	Data string `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	// Object data
+	Data *PublishPostData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	// Object publishing time
 	PublishAt     *timestamp.Timestamp `protobuf:"bytes,4,opt,name=publish_at,json=publishAt,proto3" json:"publish_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -165,7 +228,7 @@ type PublishNowRequest struct {
 
 func (x *PublishNowRequest) Reset() {
 	*x = PublishNowRequest{}
-	mi := &file_publisher_publisher_proto_msgTypes[2]
+	mi := &file_publisher_publisher_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -177,7 +240,7 @@ func (x *PublishNowRequest) String() string {
 func (*PublishNowRequest) ProtoMessage() {}
 
 func (x *PublishNowRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_publisher_publisher_proto_msgTypes[2]
+	mi := &file_publisher_publisher_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -190,7 +253,7 @@ func (x *PublishNowRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishNowRequest.ProtoReflect.Descriptor instead.
 func (*PublishNowRequest) Descriptor() ([]byte, []int) {
-	return file_publisher_publisher_proto_rawDescGZIP(), []int{2}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *PublishNowRequest) GetId() string {
@@ -207,11 +270,11 @@ func (x *PublishNowRequest) GetPublishChannel() string {
 	return ""
 }
 
-func (x *PublishNowRequest) GetData() string {
+func (x *PublishNowRequest) GetData() *PublishPostData {
 	if x != nil {
 		return x.Data
 	}
-	return ""
+	return nil
 }
 
 func (x *PublishNowRequest) GetPublishAt() *timestamp.Timestamp {
@@ -231,7 +294,7 @@ type PublishNowResponse struct {
 
 func (x *PublishNowResponse) Reset() {
 	*x = PublishNowResponse{}
-	mi := &file_publisher_publisher_proto_msgTypes[3]
+	mi := &file_publisher_publisher_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -243,7 +306,7 @@ func (x *PublishNowResponse) String() string {
 func (*PublishNowResponse) ProtoMessage() {}
 
 func (x *PublishNowResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_publisher_publisher_proto_msgTypes[3]
+	mi := &file_publisher_publisher_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +319,7 @@ func (x *PublishNowResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PublishNowResponse.ProtoReflect.Descriptor instead.
 func (*PublishNowResponse) Descriptor() ([]byte, []int) {
-	return file_publisher_publisher_proto_rawDescGZIP(), []int{3}
+	return file_publisher_publisher_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *PublishNowResponse) GetId() string {
@@ -270,20 +333,24 @@ var File_publisher_publisher_proto protoreflect.FileDescriptor
 
 const file_publisher_publisher_proto_rawDesc = "" +
 	"\n" +
-	"\x19publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xd2\x01\n" +
+	"\x19publisher/publisher.proto\x12\tpublisher\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"V\n" +
+	"\x0fPublishPostData\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x02 \x01(\tR\x04body\x12\x19\n" +
+	"\bpost_url\x18\x03 \x01(\tR\apostUrl\"\xee\x01\n" +
 	"\x17PublishScheduledRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
-	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
-	"\x04data\x18\x03 \x01(\tR\x04data\x129\n" +
+	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12.\n" +
+	"\x04data\x18\x03 \x01(\v2\x1a.publisher.PublishPostDataR\x04data\x129\n" +
 	"\n" +
 	"publish_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\x12/\n" +
 	"\x05delay\x18\x05 \x01(\v2\x19.google.protobuf.DurationR\x05delay\"*\n" +
 	"\x18PublishScheduledResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x9b\x01\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\xb7\x01\n" +
 	"\x11PublishNowRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
-	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12\x12\n" +
-	"\x04data\x18\x03 \x01(\tR\x04data\x129\n" +
+	"\x0fpublish_channel\x18\x02 \x01(\tR\x0epublishChannel\x12.\n" +
+	"\x04data\x18\x03 \x01(\v2\x1a.publisher.PublishPostDataR\x04data\x129\n" +
 	"\n" +
 	"publish_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tpublishAt\"$\n" +
 	"\x12PublishNowResponse\x12\x0e\n" +
@@ -305,28 +372,31 @@ func file_publisher_publisher_proto_rawDescGZIP() []byte {
 	return file_publisher_publisher_proto_rawDescData
 }
 
-var file_publisher_publisher_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_publisher_publisher_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_publisher_publisher_proto_goTypes = []any{
-	(*PublishScheduledRequest)(nil),  // 0: publisher.PublishScheduledRequest
-	(*PublishScheduledResponse)(nil), // 1: publisher.PublishScheduledResponse
-	(*PublishNowRequest)(nil),        // 2: publisher.PublishNowRequest
-	(*PublishNowResponse)(nil),       // 3: publisher.PublishNowResponse
-	(*timestamp.Timestamp)(nil),      // 4: google.protobuf.Timestamp
-	(*duration.Duration)(nil),        // 5: google.protobuf.Duration
+	(*PublishPostData)(nil),          // 0: publisher.PublishPostData
+	(*PublishScheduledRequest)(nil),  // 1: publisher.PublishScheduledRequest
+	(*PublishScheduledResponse)(nil), // 2: publisher.PublishScheduledResponse
+	(*PublishNowRequest)(nil),        // 3: publisher.PublishNowRequest
+	(*PublishNowResponse)(nil),       // 4: publisher.PublishNowResponse
+	(*timestamp.Timestamp)(nil),      // 5: google.protobuf.Timestamp
+	(*duration.Duration)(nil),        // 6: google.protobuf.Duration
 }
 var file_publisher_publisher_proto_depIdxs = []int32{
-	4, // 0: publisher.PublishScheduledRequest.publish_at:type_name -> google.protobuf.Timestamp
-	5, // 1: publisher.PublishScheduledRequest.delay:type_name -> google.protobuf.Duration
-	4, // 2: publisher.PublishNowRequest.publish_at:type_name -> google.protobuf.Timestamp
-	0, // 3: publisher.Publisher.PublishScheduled:input_type -> publisher.PublishScheduledRequest
-	2, // 4: publisher.Publisher.PublishNow:input_type -> publisher.PublishNowRequest
-	1, // 5: publisher.Publisher.PublishScheduled:output_type -> publisher.PublishScheduledResponse
-	3, // 6: publisher.Publisher.PublishNow:output_type -> publisher.PublishNowResponse
-	5, // [5:7] is the sub-list for method output_type
-	3, // [3:5] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0, // 0: publisher.PublishScheduledRequest.data:type_name -> publisher.PublishPostData
+	5, // 1: publisher.PublishScheduledRequest.publish_at:type_name -> google.protobuf.Timestamp
+	6, // 2: publisher.PublishScheduledRequest.delay:type_name -> google.protobuf.Duration
+	0, // 3: publisher.PublishNowRequest.data:type_name -> publisher.PublishPostData
+	5, // 4: publisher.PublishNowRequest.publish_at:type_name -> google.protobuf.Timestamp
+	1, // 5: publisher.Publisher.PublishScheduled:input_type -> publisher.PublishScheduledRequest
+	3, // 6: publisher.Publisher.PublishNow:input_type -> publisher.PublishNowRequest
+	2, // 7: publisher.Publisher.PublishScheduled:output_type -> publisher.PublishScheduledResponse
+	4, // 8: publisher.Publisher.PublishNow:output_type -> publisher.PublishNowResponse
+	7, // [7:9] is the sub-list for method output_type
+	5, // [5:7] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_publisher_publisher_proto_init() }
@@ -340,7 +410,7 @@ func file_publisher_publisher_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_publisher_publisher_proto_rawDesc), len(file_publisher_publisher_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
