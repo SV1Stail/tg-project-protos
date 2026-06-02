@@ -1,28 +1,37 @@
 syntax = "proto3";
 
-package publish_post;
-
+package queue_scheduler;
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler/publish_post;publish_post_pb";
+option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/queue_scheduler;queue_scheduler_pb";
 
-message PublishPost {
+service Queuescheduler {
+    rpc CreatePost (CreatePostRequest) returns (CreatePostResponse);
+    rpc UpdatePost (UpdatePostRequest) returns (UpdatePostResponse);
+    // mark post on delete, cancel posting
+    rpc DeletePost (DeletePostRequest) returns (DeletePostResponse);
+    // mark posts on delete, cancel posting
+    rpc DeletePostsForChannel (DeletePostsForChannelRequest) returns (DeletePostsForChannelResponse);
+    rpc GetPost (GetPostRequest) returns (GetPostResponse);
+    rpc GetPostsForChannel (GetPostsForChannelRequest) returns (GetPostsForChannelResponse);
+}
+
+message Post {
     // Object identifier
     string id = 1;
     // channel to publish
     string publish_channel = 2;
     // Object text or other info in body
     PublishPostData data = 3;
-    // Object status
-    string status = 4;
     // Object publishing time
-    google.protobuf.Timestamp publish_at = 5;
+    google.protobuf.Timestamp publish_at = 4;
     // Object creation time
-    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp created_at = 5;
     // Object last updated time
-    google.protobuf.Timestamp updated_at = 7;
-    // retries attempts
-    int32 attempts = 8;
+    google.protobuf.Timestamp updated_at = 6;
+    // Where images saved (maybe URLs)
+    repeated string images_urls = 7;
+
 }
 
 message PublishPostData {
@@ -30,8 +39,8 @@ message PublishPostData {
     string title = 1;
     // Object text
     string body = 2;
-    // URL on original post
-    string post_url = 3;
+    // URLs on original post
+    repeated string post_url = 3;
 }
 
 message CreatePostRequest {
@@ -43,8 +52,8 @@ message CreatePostRequest {
     google.protobuf.Timestamp publish_at = 3;
 }
 message CreatePostResponse { 
-    // created Object identifier
-    string id = 1;
+    // created post
+    Post post = 1;
 }
 
 message UpdatePostRequest {
@@ -58,8 +67,8 @@ message UpdatePostRequest {
     google.protobuf.Timestamp publish_at = 4;
 }
 message UpdatePostResponse { 
-    // updated Objects identifier
-    string id = 1;
+    // updated post
+    Post post = 1;
 }
 
 message DeletePostRequest {
@@ -77,7 +86,7 @@ message GetPostRequest {
 }
 message GetPostResponse {
     // get Object
-    PublishPost publish_post = 1;
+    Post post = 1;
 }
 
 message GetPostsForChannelRequest {
@@ -86,18 +95,15 @@ message GetPostsForChannelRequest {
 }
 message GetPostsForChannelResponse {
     // get Objects array
-    repeated PublishPost publish_posts = 1;
+    repeated Post posts = 1;
 }
 
-message CreatePostSomeChannelsRequest {
-    // channels to post
-    repeated string publish_channels = 1;
-    // Object data
-    PublishPostData data = 2;
-    // Object publishing time
-    google.protobuf.Timestamp publish_at = 3;
+message DeletePostsForChannelRequest {
+    // channel where posts will be publish
+    string publish_channel = 1;
 }
-message CreatePostSomeChannelsResponse { 
-    // created Objects identifiers
+
+message DeletePostsForChannelResponse {
+    // deleted posts
     repeated string ids = 1;
 }
