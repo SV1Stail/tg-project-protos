@@ -1,28 +1,45 @@
+PROTO_DIR := proto
+GO_OUT := gen/go
+PY_OUT := gen/python
+PROTOC_IMAGE := proto-generator:local
+PROTO_FILES := $(shell find $(PROTO_DIR) -type f -name '*.proto')
+UID_GID := $(shell id -u):$(shell id -g)
 
-PROTO_DIR=./proto
-GO_OUT=./gen/go
-PY_OUT=./gen/python
-PROTO_FILES := $(shell find $(PROTO_DIR) -name '*.proto')
+.PHONY: build-protoc-image generate generate-go generate-py clean
 
-generate: generate-go generate-py
+all: build-protoc-image generate
+
+build-protoc-image:
+	docker build -t $(PROTOC_IMAGE) -f docker/protoc/Dockerfile .
+
+generate: generate-go
 
 generate-go:
-	protoc -I $(PROTO_DIR) \
+	mkdir -p $(GO_OUT)
+	docker run --rm \
+		--user $(UID_GID) \
+		-v "$(CURDIR):/workspace" \
+		-w /workspace \
+		$(PROTOC_IMAGE) \
+		protoc \
+		-I $(PROTO_DIR) \
 		--go_out=$(GO_OUT) --go_opt=paths=source_relative \
 		--go-grpc_out=$(GO_OUT) --go-grpc_opt=paths=source_relative \
-	$(PROTO_FILES)
-	cd gen/go && go mod tidy && go mod vendor
+		$(PROTO_FILES)
+	cd $(GO_OUT) && go mod tidy && go mod vendor
 
 generate-py:
-	protoc -I ${PROTO_DIR} \
-		--python_out=${PY_OUT} \
-		--grpc_python_out=${PY_OUT} \
-		--plugin=protoc-gen-grpc_python=/usr/bin/grpc_python_plugin \
+	mkdir -p $(PY_OUT)
+	docker run --rm \
+		--user $(UID_GID) \
+		-v "$(CURDIR):/workspace" \
+		-w /workspace \
+		$(PROTOC_IMAGE) \
+		python3 -m grpc_tools.protoc \
+		-I $(PROTO_DIR) \
+		--python_out=$(PY_OUT) \
+		--grpc_python_out=$(PY_OUT) \
 		$(PROTO_FILES)
 
-	touch "${PY_OUT}/publisher/__init__.py"
-	touch "${PY_OUT}/queue_scheduler/__init__.py" 
-
 clean:
-	rm -rf $(GO_OUT)/queue_scheduler $(GO_OUT)/publisher $(GO_OUT)/vendor
-	rm -rf ${PY_OUT}/queue_scheduler ${PY_OUT}/publisher
+	rm -rf $(GO_OUT) $(PY_OUT)
