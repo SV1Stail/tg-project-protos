@@ -41,34 +41,3 @@ done
 PROTO_DIR="./"
 GO_OUT="./gen/go"
 PY_PKG_DIR="./gen/python"
-
-generate_py () {
-    echo "Generating Python"
-    mkdir -p "${PY_PKG_DIR}" "${PY_PKG_DIR}"
-    # python -m grpc_tools.protoc -I "${PROTO_DIR}" \
-    # --python_out="${PY_PKG_DIR}" --grpc_python_out="${PY_PKG_DIR}" \
-    # "${PROTO_DIR}/scheduler/queue_scheduler.proto" \
-    # "${PROTO_DIR}/publisher/publisher.proto"
-
-    # touch "${PY_PKG_DIR}/__init__.py"
-    # touch "${PY_PKG_DIR}/scheduler/__init__.py"
-    # touch "${PY_PKG_DIR}/publisher/__init__.py"
-}
-
-generate_go () {
-    mkdir -p "${GO_OUT}" "${GO_OUT}"
-    echo "Generating GO"
-    # protoc -I "${PROTO_DIR}" \
-    #     --go_out="${GO_OUT}/queue_scheduler" --go-grpc_out="${GO_OUT}" \
-    #     "${PROTO_DIR}/queue_scheduler/*.proto" 
-    # protoc -I "${PROTO_DIR}" \
-    #     --go_out="${GO_OUT}" --go-grpc_out="${GO_OUT}" \
-    #     "${PROTO_DIR}/publisher/publisher.proto"
-}
-
-	# @mkdir -p $(GO_OUT)/queue_scheduler $(GO_OUT)/publisher
-	# protoc -I $(PROTO_DIR) \
-	#   --go_out=$(GO_OUT) --go-grpc_out=$(GO_OUT) \
-	#   $(PROTO_DIR)/queue_scheduler/*.proto \
-	#   $(PROTO_DIR)/publisher/publisher.proto
-	# @echo "✅ Go generated"
