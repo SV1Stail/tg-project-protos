@@ -569,7 +569,7 @@ const file_posts_processor_posts_processor_proto_rawDesc = "" +
 	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
 	"updated_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt2\x86\x04\n" +
-	"\x0eQueuescheduler\x12u\n" +
+	"\x0ePostsProcessor\x12u\n" +
 	"\x12CreateOriginalPost\x12).post_processor.CreateOriginalPostRequest\x1a4.post_processor.CreatePostCreateOriginalPostResponse\x12x\n" +
 	"\x13CreateOriginalPosts\x12*.post_processor.CreateOriginalPostsRequest\x1a5.post_processor.CreatePostCreateOriginalPostsResponse\x12\x89\x01\n" +
 	"\x1cDeleteOriginalPostsByChannel\x123.post_processor.DeleteOriginalPostsByChannelRequest\x1a4.post_processor.DeleteOriginalPostsByChannelResponse\x12w\n" +
@@ -604,14 +604,14 @@ var file_posts_processor_posts_processor_proto_depIdxs = []int32{
 	8, // 0: post_processor.GetOriginalPostsFromDBResponse.posts:type_name -> post_processor.OriginalPost
 	9, // 1: post_processor.OriginalPost.created_at:type_name -> google.protobuf.Timestamp
 	9, // 2: post_processor.OriginalPost.updated_at:type_name -> google.protobuf.Timestamp
-	0, // 3: post_processor.Queuescheduler.CreateOriginalPost:input_type -> post_processor.CreateOriginalPostRequest
-	2, // 4: post_processor.Queuescheduler.CreateOriginalPosts:input_type -> post_processor.CreateOriginalPostsRequest
-	4, // 5: post_processor.Queuescheduler.DeleteOriginalPostsByChannel:input_type -> post_processor.DeleteOriginalPostsByChannelRequest
-	6, // 6: post_processor.Queuescheduler.GetOriginalPostsFromDB:input_type -> post_processor.GetOriginalPostsFromDBRequest
-	1, // 7: post_processor.Queuescheduler.CreateOriginalPost:output_type -> post_processor.CreatePostCreateOriginalPostResponse
-	3, // 8: post_processor.Queuescheduler.CreateOriginalPosts:output_type -> post_processor.CreatePostCreateOriginalPostsResponse
-	5, // 9: post_processor.Queuescheduler.DeleteOriginalPostsByChannel:output_type -> post_processor.DeleteOriginalPostsByChannelResponse
-	7, // 10: post_processor.Queuescheduler.GetOriginalPostsFromDB:output_type -> post_processor.GetOriginalPostsFromDBResponse
+	0, // 3: post_processor.PostsProcessor.CreateOriginalPost:input_type -> post_processor.CreateOriginalPostRequest
+	2, // 4: post_processor.PostsProcessor.CreateOriginalPosts:input_type -> post_processor.CreateOriginalPostsRequest
+	4, // 5: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:input_type -> post_processor.DeleteOriginalPostsByChannelRequest
+	6, // 6: post_processor.PostsProcessor.GetOriginalPostsFromDB:input_type -> post_processor.GetOriginalPostsFromDBRequest
+	1, // 7: post_processor.PostsProcessor.CreateOriginalPost:output_type -> post_processor.CreatePostCreateOriginalPostResponse
+	3, // 8: post_processor.PostsProcessor.CreateOriginalPosts:output_type -> post_processor.CreatePostCreateOriginalPostsResponse
+	5, // 9: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:output_type -> post_processor.DeleteOriginalPostsByChannelResponse
+	7, // 10: post_processor.PostsProcessor.GetOriginalPostsFromDB:output_type -> post_processor.GetOriginalPostsFromDBResponse
 	7, // [7:11] is the sub-list for method output_type
 	3, // [3:7] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name

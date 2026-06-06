@@ -19,215 +19,215 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Queuescheduler_CreateOriginalPost_FullMethodName           = "/post_processor.Queuescheduler/CreateOriginalPost"
-	Queuescheduler_CreateOriginalPosts_FullMethodName          = "/post_processor.Queuescheduler/CreateOriginalPosts"
-	Queuescheduler_DeleteOriginalPostsByChannel_FullMethodName = "/post_processor.Queuescheduler/DeleteOriginalPostsByChannel"
-	Queuescheduler_GetOriginalPostsFromDB_FullMethodName       = "/post_processor.Queuescheduler/GetOriginalPostsFromDB"
+	PostsProcessor_CreateOriginalPost_FullMethodName           = "/post_processor.PostsProcessor/CreateOriginalPost"
+	PostsProcessor_CreateOriginalPosts_FullMethodName          = "/post_processor.PostsProcessor/CreateOriginalPosts"
+	PostsProcessor_DeleteOriginalPostsByChannel_FullMethodName = "/post_processor.PostsProcessor/DeleteOriginalPostsByChannel"
+	PostsProcessor_GetOriginalPostsFromDB_FullMethodName       = "/post_processor.PostsProcessor/GetOriginalPostsFromDB"
 )
 
-// QueueschedulerClient is the client API for Queuescheduler service.
+// PostsProcessorClient is the client API for PostsProcessor service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type QueueschedulerClient interface {
+type PostsProcessorClient interface {
 	CreateOriginalPost(ctx context.Context, in *CreateOriginalPostRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostResponse, error)
 	CreateOriginalPosts(ctx context.Context, in *CreateOriginalPostsRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostsResponse, error)
 	DeleteOriginalPostsByChannel(ctx context.Context, in *DeleteOriginalPostsByChannelRequest, opts ...grpc.CallOption) (*DeleteOriginalPostsByChannelResponse, error)
 	GetOriginalPostsFromDB(ctx context.Context, in *GetOriginalPostsFromDBRequest, opts ...grpc.CallOption) (*GetOriginalPostsFromDBResponse, error)
 }
 
-type queueschedulerClient struct {
+type postsProcessorClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewQueueschedulerClient(cc grpc.ClientConnInterface) QueueschedulerClient {
-	return &queueschedulerClient{cc}
+func NewPostsProcessorClient(cc grpc.ClientConnInterface) PostsProcessorClient {
+	return &postsProcessorClient{cc}
 }
 
-func (c *queueschedulerClient) CreateOriginalPost(ctx context.Context, in *CreateOriginalPostRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostResponse, error) {
+func (c *postsProcessorClient) CreateOriginalPost(ctx context.Context, in *CreateOriginalPostRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreatePostCreateOriginalPostResponse)
-	err := c.cc.Invoke(ctx, Queuescheduler_CreateOriginalPost_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, PostsProcessor_CreateOriginalPost_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *queueschedulerClient) CreateOriginalPosts(ctx context.Context, in *CreateOriginalPostsRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostsResponse, error) {
+func (c *postsProcessorClient) CreateOriginalPosts(ctx context.Context, in *CreateOriginalPostsRequest, opts ...grpc.CallOption) (*CreatePostCreateOriginalPostsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreatePostCreateOriginalPostsResponse)
-	err := c.cc.Invoke(ctx, Queuescheduler_CreateOriginalPosts_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, PostsProcessor_CreateOriginalPosts_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *queueschedulerClient) DeleteOriginalPostsByChannel(ctx context.Context, in *DeleteOriginalPostsByChannelRequest, opts ...grpc.CallOption) (*DeleteOriginalPostsByChannelResponse, error) {
+func (c *postsProcessorClient) DeleteOriginalPostsByChannel(ctx context.Context, in *DeleteOriginalPostsByChannelRequest, opts ...grpc.CallOption) (*DeleteOriginalPostsByChannelResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteOriginalPostsByChannelResponse)
-	err := c.cc.Invoke(ctx, Queuescheduler_DeleteOriginalPostsByChannel_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, PostsProcessor_DeleteOriginalPostsByChannel_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *queueschedulerClient) GetOriginalPostsFromDB(ctx context.Context, in *GetOriginalPostsFromDBRequest, opts ...grpc.CallOption) (*GetOriginalPostsFromDBResponse, error) {
+func (c *postsProcessorClient) GetOriginalPostsFromDB(ctx context.Context, in *GetOriginalPostsFromDBRequest, opts ...grpc.CallOption) (*GetOriginalPostsFromDBResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetOriginalPostsFromDBResponse)
-	err := c.cc.Invoke(ctx, Queuescheduler_GetOriginalPostsFromDB_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, PostsProcessor_GetOriginalPostsFromDB_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// QueueschedulerServer is the server API for Queuescheduler service.
-// All implementations must embed UnimplementedQueueschedulerServer
+// PostsProcessorServer is the server API for PostsProcessor service.
+// All implementations must embed UnimplementedPostsProcessorServer
 // for forward compatibility.
-type QueueschedulerServer interface {
+type PostsProcessorServer interface {
 	CreateOriginalPost(context.Context, *CreateOriginalPostRequest) (*CreatePostCreateOriginalPostResponse, error)
 	CreateOriginalPosts(context.Context, *CreateOriginalPostsRequest) (*CreatePostCreateOriginalPostsResponse, error)
 	DeleteOriginalPostsByChannel(context.Context, *DeleteOriginalPostsByChannelRequest) (*DeleteOriginalPostsByChannelResponse, error)
 	GetOriginalPostsFromDB(context.Context, *GetOriginalPostsFromDBRequest) (*GetOriginalPostsFromDBResponse, error)
-	mustEmbedUnimplementedQueueschedulerServer()
+	mustEmbedUnimplementedPostsProcessorServer()
 }
 
-// UnimplementedQueueschedulerServer must be embedded to have
+// UnimplementedPostsProcessorServer must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedQueueschedulerServer struct{}
+type UnimplementedPostsProcessorServer struct{}
 
-func (UnimplementedQueueschedulerServer) CreateOriginalPost(context.Context, *CreateOriginalPostRequest) (*CreatePostCreateOriginalPostResponse, error) {
+func (UnimplementedPostsProcessorServer) CreateOriginalPost(context.Context, *CreateOriginalPostRequest) (*CreatePostCreateOriginalPostResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateOriginalPost not implemented")
 }
-func (UnimplementedQueueschedulerServer) CreateOriginalPosts(context.Context, *CreateOriginalPostsRequest) (*CreatePostCreateOriginalPostsResponse, error) {
+func (UnimplementedPostsProcessorServer) CreateOriginalPosts(context.Context, *CreateOriginalPostsRequest) (*CreatePostCreateOriginalPostsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateOriginalPosts not implemented")
 }
-func (UnimplementedQueueschedulerServer) DeleteOriginalPostsByChannel(context.Context, *DeleteOriginalPostsByChannelRequest) (*DeleteOriginalPostsByChannelResponse, error) {
+func (UnimplementedPostsProcessorServer) DeleteOriginalPostsByChannel(context.Context, *DeleteOriginalPostsByChannelRequest) (*DeleteOriginalPostsByChannelResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteOriginalPostsByChannel not implemented")
 }
-func (UnimplementedQueueschedulerServer) GetOriginalPostsFromDB(context.Context, *GetOriginalPostsFromDBRequest) (*GetOriginalPostsFromDBResponse, error) {
+func (UnimplementedPostsProcessorServer) GetOriginalPostsFromDB(context.Context, *GetOriginalPostsFromDBRequest) (*GetOriginalPostsFromDBResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetOriginalPostsFromDB not implemented")
 }
-func (UnimplementedQueueschedulerServer) mustEmbedUnimplementedQueueschedulerServer() {}
-func (UnimplementedQueueschedulerServer) testEmbeddedByValue()                        {}
+func (UnimplementedPostsProcessorServer) mustEmbedUnimplementedPostsProcessorServer() {}
+func (UnimplementedPostsProcessorServer) testEmbeddedByValue()                        {}
 
-// UnsafeQueueschedulerServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to QueueschedulerServer will
+// UnsafePostsProcessorServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to PostsProcessorServer will
 // result in compilation errors.
-type UnsafeQueueschedulerServer interface {
-	mustEmbedUnimplementedQueueschedulerServer()
+type UnsafePostsProcessorServer interface {
+	mustEmbedUnimplementedPostsProcessorServer()
 }
 
-func RegisterQueueschedulerServer(s grpc.ServiceRegistrar, srv QueueschedulerServer) {
-	// If the following call panics, it indicates UnimplementedQueueschedulerServer was
+func RegisterPostsProcessorServer(s grpc.ServiceRegistrar, srv PostsProcessorServer) {
+	// If the following call panics, it indicates UnimplementedPostsProcessorServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&Queuescheduler_ServiceDesc, srv)
+	s.RegisterService(&PostsProcessor_ServiceDesc, srv)
 }
 
-func _Queuescheduler_CreateOriginalPost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PostsProcessor_CreateOriginalPost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateOriginalPostRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueueschedulerServer).CreateOriginalPost(ctx, in)
+		return srv.(PostsProcessorServer).CreateOriginalPost(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Queuescheduler_CreateOriginalPost_FullMethodName,
+		FullMethod: PostsProcessor_CreateOriginalPost_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueueschedulerServer).CreateOriginalPost(ctx, req.(*CreateOriginalPostRequest))
+		return srv.(PostsProcessorServer).CreateOriginalPost(ctx, req.(*CreateOriginalPostRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Queuescheduler_CreateOriginalPosts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PostsProcessor_CreateOriginalPosts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateOriginalPostsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueueschedulerServer).CreateOriginalPosts(ctx, in)
+		return srv.(PostsProcessorServer).CreateOriginalPosts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Queuescheduler_CreateOriginalPosts_FullMethodName,
+		FullMethod: PostsProcessor_CreateOriginalPosts_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueueschedulerServer).CreateOriginalPosts(ctx, req.(*CreateOriginalPostsRequest))
+		return srv.(PostsProcessorServer).CreateOriginalPosts(ctx, req.(*CreateOriginalPostsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Queuescheduler_DeleteOriginalPostsByChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PostsProcessor_DeleteOriginalPostsByChannel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteOriginalPostsByChannelRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueueschedulerServer).DeleteOriginalPostsByChannel(ctx, in)
+		return srv.(PostsProcessorServer).DeleteOriginalPostsByChannel(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Queuescheduler_DeleteOriginalPostsByChannel_FullMethodName,
+		FullMethod: PostsProcessor_DeleteOriginalPostsByChannel_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueueschedulerServer).DeleteOriginalPostsByChannel(ctx, req.(*DeleteOriginalPostsByChannelRequest))
+		return srv.(PostsProcessorServer).DeleteOriginalPostsByChannel(ctx, req.(*DeleteOriginalPostsByChannelRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Queuescheduler_GetOriginalPostsFromDB_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _PostsProcessor_GetOriginalPostsFromDB_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOriginalPostsFromDBRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueueschedulerServer).GetOriginalPostsFromDB(ctx, in)
+		return srv.(PostsProcessorServer).GetOriginalPostsFromDB(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Queuescheduler_GetOriginalPostsFromDB_FullMethodName,
+		FullMethod: PostsProcessor_GetOriginalPostsFromDB_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueueschedulerServer).GetOriginalPostsFromDB(ctx, req.(*GetOriginalPostsFromDBRequest))
+		return srv.(PostsProcessorServer).GetOriginalPostsFromDB(ctx, req.(*GetOriginalPostsFromDBRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Queuescheduler_ServiceDesc is the grpc.ServiceDesc for Queuescheduler service.
+// PostsProcessor_ServiceDesc is the grpc.ServiceDesc for PostsProcessor service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Queuescheduler_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "post_processor.Queuescheduler",
-	HandlerType: (*QueueschedulerServer)(nil),
+var PostsProcessor_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "post_processor.PostsProcessor",
+	HandlerType: (*PostsProcessorServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateOriginalPost",
-			Handler:    _Queuescheduler_CreateOriginalPost_Handler,
+			Handler:    _PostsProcessor_CreateOriginalPost_Handler,
 		},
 		{
 			MethodName: "CreateOriginalPosts",
-			Handler:    _Queuescheduler_CreateOriginalPosts_Handler,
+			Handler:    _PostsProcessor_CreateOriginalPosts_Handler,
 		},
 		{
 			MethodName: "DeleteOriginalPostsByChannel",
-			Handler:    _Queuescheduler_DeleteOriginalPostsByChannel_Handler,
+			Handler:    _PostsProcessor_DeleteOriginalPostsByChannel_Handler,
 		},
 		{
 			MethodName: "GetOriginalPostsFromDB",
-			Handler:    _Queuescheduler_GetOriginalPostsFromDB_Handler,
+			Handler:    _PostsProcessor_GetOriginalPostsFromDB_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
