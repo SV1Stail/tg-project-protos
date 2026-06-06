@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/SV1Stail/tg-project-protos/gen/go/post_processor;post_processor_pb";
 
-service Queuescheduler {
+service PostsProcessor {
     rpc CreateOriginalPost (CreateOriginalPostRequest) returns (CreatePostCreateOriginalPostResponse);
     rpc CreateOriginalPosts (CreateOriginalPostsRequest) returns (CreatePostCreateOriginalPostsResponse);
     rpc DeleteOriginalPostsByChannel (DeleteOriginalPostsByChannelRequest) returns (DeleteOriginalPostsByChannelResponse);
