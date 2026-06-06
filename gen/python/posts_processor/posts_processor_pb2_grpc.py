@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class QueueschedulerStub:
+class PostsProcessorStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -35,28 +35,28 @@ class QueueschedulerStub:
             channel: A grpc.Channel.
         """
         self.CreateOriginalPost = channel.unary_unary(
-                '/post_processor.Queuescheduler/CreateOriginalPost',
+                '/post_processor.PostsProcessor/CreateOriginalPost',
                 request_serializer=posts__processor_dot_posts__processor__pb2.CreateOriginalPostRequest.SerializeToString,
                 response_deserializer=posts__processor_dot_posts__processor__pb2.CreatePostCreateOriginalPostResponse.FromString,
                 _registered_method=True)
         self.CreateOriginalPosts = channel.unary_unary(
-                '/post_processor.Queuescheduler/CreateOriginalPosts',
+                '/post_processor.PostsProcessor/CreateOriginalPosts',
                 request_serializer=posts__processor_dot_posts__processor__pb2.CreateOriginalPostsRequest.SerializeToString,
                 response_deserializer=posts__processor_dot_posts__processor__pb2.CreatePostCreateOriginalPostsResponse.FromString,
                 _registered_method=True)
         self.DeleteOriginalPostsByChannel = channel.unary_unary(
-                '/post_processor.Queuescheduler/DeleteOriginalPostsByChannel',
+                '/post_processor.PostsProcessor/DeleteOriginalPostsByChannel',
                 request_serializer=posts__processor_dot_posts__processor__pb2.DeleteOriginalPostsByChannelRequest.SerializeToString,
                 response_deserializer=posts__processor_dot_posts__processor__pb2.DeleteOriginalPostsByChannelResponse.FromString,
                 _registered_method=True)
         self.GetOriginalPostsFromDB = channel.unary_unary(
-                '/post_processor.Queuescheduler/GetOriginalPostsFromDB',
+                '/post_processor.PostsProcessor/GetOriginalPostsFromDB',
                 request_serializer=posts__processor_dot_posts__processor__pb2.GetOriginalPostsFromDBRequest.SerializeToString,
                 response_deserializer=posts__processor_dot_posts__processor__pb2.GetOriginalPostsFromDBResponse.FromString,
                 _registered_method=True)
 
 
-class QueueschedulerServicer:
+class PostsProcessorServicer:
     """Missing associated documentation comment in .proto file."""
 
     def CreateOriginalPost(self, request, context):
@@ -84,7 +84,7 @@ class QueueschedulerServicer:
         raise NotImplementedError('Method not implemented!')
 
 
-def add_QueueschedulerServicer_to_server(servicer, server):
+def add_PostsProcessorServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateOriginalPost': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateOriginalPost,
@@ -108,13 +108,13 @@ def add_QueueschedulerServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'post_processor.Queuescheduler', rpc_method_handlers)
+            'post_processor.PostsProcessor', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('post_processor.Queuescheduler', rpc_method_handlers)
+    server.add_registered_method_handlers('post_processor.PostsProcessor', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class Queuescheduler:
+class PostsProcessor:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -131,7 +131,7 @@ class Queuescheduler:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post_processor.Queuescheduler/CreateOriginalPost',
+            '/post_processor.PostsProcessor/CreateOriginalPost',
             posts__processor_dot_posts__processor__pb2.CreateOriginalPostRequest.SerializeToString,
             posts__processor_dot_posts__processor__pb2.CreatePostCreateOriginalPostResponse.FromString,
             options,
@@ -158,7 +158,7 @@ class Queuescheduler:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post_processor.Queuescheduler/CreateOriginalPosts',
+            '/post_processor.PostsProcessor/CreateOriginalPosts',
             posts__processor_dot_posts__processor__pb2.CreateOriginalPostsRequest.SerializeToString,
             posts__processor_dot_posts__processor__pb2.CreatePostCreateOriginalPostsResponse.FromString,
             options,
@@ -185,7 +185,7 @@ class Queuescheduler:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post_processor.Queuescheduler/DeleteOriginalPostsByChannel',
+            '/post_processor.PostsProcessor/DeleteOriginalPostsByChannel',
             posts__processor_dot_posts__processor__pb2.DeleteOriginalPostsByChannelRequest.SerializeToString,
             posts__processor_dot_posts__processor__pb2.DeleteOriginalPostsByChannelResponse.FromString,
             options,
@@ -212,7 +212,7 @@ class Queuescheduler:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/post_processor.Queuescheduler/GetOriginalPostsFromDB',
+            '/post_processor.PostsProcessor/GetOriginalPostsFromDB',
             posts__processor_dot_posts__processor__pb2.GetOriginalPostsFromDBRequest.SerializeToString,
             posts__processor_dot_posts__processor__pb2.GetOriginalPostsFromDBResponse.FromString,
             options,
