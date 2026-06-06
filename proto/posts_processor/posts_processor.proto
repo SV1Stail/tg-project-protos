@@ -13,6 +13,17 @@ service PostsProcessor {
     rpc GetOriginalPostsFromDB (GetOriginalPostsFromDBRequest) returns (GetOriginalPostsFromDBResponse);
 }
 
+message OriginalPost {
+    string id = 1;
+    string data = 2;
+    string link_original_post = 3;
+    string original_channel = 4;
+    string original_image_url = 5;
+    string theme = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}
+
 message CreateOriginalPostRequest {
     string text = 1;
     string link_original_post = 2;
@@ -49,15 +60,4 @@ message GetOriginalPostsFromDBRequest {
 
 message GetOriginalPostsFromDBResponse {
     repeated OriginalPost posts = 1;
-}
-
-message OriginalPost {
-    string id = 1;
-    string data = 2;
-    string link_original_post = 3;
-    string original_channel = 4;
-    string original_image_url = 5;
-    string theme = 6;
-    google.protobuf.Timestamp created_at = 7;
-    google.protobuf.Timestamp updated_at = 8;
 }

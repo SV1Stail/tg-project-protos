@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%posts_processor/posts_processor.proto\x12\x0epost_processor\x1a\x1fgoogle/protobuf/timestamp.proto\"n\n\x19\x43reateOriginalPostRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x12link_original_post\x18\x02 \x01(\t\x12\x18\n\x10original_channel\x18\x03 \x01(\t\x12\r\n\x05theme\x18\x04 \x01(\t\"2\n$CreatePostCreateOriginalPostResponse\x12\n\n\x02id\x18\x01 \x01(\t\"o\n\x1a\x43reateOriginalPostsRequest\x12\x0c\n\x04text\x18\x01 \x03(\t\x12\x1a\n\x12link_original_post\x18\x02 \x01(\t\x12\x18\n\x10original_channel\x18\x03 \x01(\t\x12\r\n\x05theme\x18\x04 \x01(\t\"4\n%CreatePostCreateOriginalPostsResponse\x12\x0b\n\x03ids\x18\x01 \x03(\t\"?\n#DeleteOriginalPostsByChannelRequest\x12\x18\n\x10original_channel\x18\x01 \x01(\t\"3\n$DeleteOriginalPostsByChannelResponse\x12\x0b\n\x03ids\x18\x01 \x03(\t\">\n\x1dGetOriginalPostsFromDBRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\x12\x0e\n\x06offset\x18\x02 \x01(\x05\"M\n\x1eGetOriginalPostsFromDBResponse\x12+\n\x05posts\x18\x01 \x03(\x0b\x32\x1c.post_processor.OriginalPost\"\xe9\x01\n\x0cOriginalPost\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12\x1a\n\x12link_original_post\x18\x03 \x01(\t\x12\x18\n\x10original_channel\x18\x04 \x01(\t\x12\x1a\n\x12original_image_url\x18\x05 \x01(\t\x12\r\n\x05theme\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x86\x04\n\x0ePostsProcessor\x12u\n\x12\x43reateOriginalPost\x12).post_processor.CreateOriginalPostRequest\x1a\x34.post_processor.CreatePostCreateOriginalPostResponse\x12x\n\x13\x43reateOriginalPosts\x12*.post_processor.CreateOriginalPostsRequest\x1a\x35.post_processor.CreatePostCreateOriginalPostsResponse\x12\x89\x01\n\x1c\x44\x65leteOriginalPostsByChannel\x12\x33.post_processor.DeleteOriginalPostsByChannelRequest\x1a\x34.post_processor.DeleteOriginalPostsByChannelResponse\x12w\n\x16GetOriginalPostsFromDB\x12-.post_processor.GetOriginalPostsFromDBRequest\x1a..post_processor.GetOriginalPostsFromDBResponseBOZMgithub.com/SV1Stail/tg-project-protos/gen/go/post_processor;post_processor_pbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%posts_processor/posts_processor.proto\x12\x0epost_processor\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe9\x01\n\x0cOriginalPost\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12\x1a\n\x12link_original_post\x18\x03 \x01(\t\x12\x18\n\x10original_channel\x18\x04 \x01(\t\x12\x1a\n\x12original_image_url\x18\x05 \x01(\t\x12\r\n\x05theme\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x19\x43reateOriginalPostRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x12link_original_post\x18\x02 \x01(\t\x12\x18\n\x10original_channel\x18\x03 \x01(\t\x12\r\n\x05theme\x18\x04 \x01(\t\"2\n$CreatePostCreateOriginalPostResponse\x12\n\n\x02id\x18\x01 \x01(\t\"o\n\x1a\x43reateOriginalPostsRequest\x12\x0c\n\x04text\x18\x01 \x03(\t\x12\x1a\n\x12link_original_post\x18\x02 \x01(\t\x12\x18\n\x10original_channel\x18\x03 \x01(\t\x12\r\n\x05theme\x18\x04 \x01(\t\"4\n%CreatePostCreateOriginalPostsResponse\x12\x0b\n\x03ids\x18\x01 \x03(\t\"?\n#DeleteOriginalPostsByChannelRequest\x12\x18\n\x10original_channel\x18\x01 \x01(\t\"3\n$DeleteOriginalPostsByChannelResponse\x12\x0b\n\x03ids\x18\x01 \x03(\t\">\n\x1dGetOriginalPostsFromDBRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\x12\x0e\n\x06offset\x18\x02 \x01(\x05\"M\n\x1eGetOriginalPostsFromDBResponse\x12+\n\x05posts\x18\x01 \x03(\x0b\x32\x1c.post_processor.OriginalPost2\x86\x04\n\x0ePostsProcessor\x12u\n\x12\x43reateOriginalPost\x12).post_processor.CreateOriginalPostRequest\x1a\x34.post_processor.CreatePostCreateOriginalPostResponse\x12x\n\x13\x43reateOriginalPosts\x12*.post_processor.CreateOriginalPostsRequest\x1a\x35.post_processor.CreatePostCreateOriginalPostsResponse\x12\x89\x01\n\x1c\x44\x65leteOriginalPostsByChannel\x12\x33.post_processor.DeleteOriginalPostsByChannelRequest\x1a\x34.post_processor.DeleteOriginalPostsByChannelResponse\x12w\n\x16GetOriginalPostsFromDB\x12-.post_processor.GetOriginalPostsFromDBRequest\x1a..post_processor.GetOriginalPostsFromDBResponseBOZMgithub.com/SV1Stail/tg-project-protos/gen/go/post_processor;post_processor_pbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,24 +33,24 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'posts_processor.posts_proce
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'ZMgithub.com/SV1Stail/tg-project-protos/gen/go/post_processor;post_processor_pb'
-  _globals['_CREATEORIGINALPOSTREQUEST']._serialized_start=90
-  _globals['_CREATEORIGINALPOSTREQUEST']._serialized_end=200
-  _globals['_CREATEPOSTCREATEORIGINALPOSTRESPONSE']._serialized_start=202
-  _globals['_CREATEPOSTCREATEORIGINALPOSTRESPONSE']._serialized_end=252
-  _globals['_CREATEORIGINALPOSTSREQUEST']._serialized_start=254
-  _globals['_CREATEORIGINALPOSTSREQUEST']._serialized_end=365
-  _globals['_CREATEPOSTCREATEORIGINALPOSTSRESPONSE']._serialized_start=367
-  _globals['_CREATEPOSTCREATEORIGINALPOSTSRESPONSE']._serialized_end=419
-  _globals['_DELETEORIGINALPOSTSBYCHANNELREQUEST']._serialized_start=421
-  _globals['_DELETEORIGINALPOSTSBYCHANNELREQUEST']._serialized_end=484
-  _globals['_DELETEORIGINALPOSTSBYCHANNELRESPONSE']._serialized_start=486
-  _globals['_DELETEORIGINALPOSTSBYCHANNELRESPONSE']._serialized_end=537
-  _globals['_GETORIGINALPOSTSFROMDBREQUEST']._serialized_start=539
-  _globals['_GETORIGINALPOSTSFROMDBREQUEST']._serialized_end=601
-  _globals['_GETORIGINALPOSTSFROMDBRESPONSE']._serialized_start=603
-  _globals['_GETORIGINALPOSTSFROMDBRESPONSE']._serialized_end=680
-  _globals['_ORIGINALPOST']._serialized_start=683
-  _globals['_ORIGINALPOST']._serialized_end=916
+  _globals['_ORIGINALPOST']._serialized_start=91
+  _globals['_ORIGINALPOST']._serialized_end=324
+  _globals['_CREATEORIGINALPOSTREQUEST']._serialized_start=326
+  _globals['_CREATEORIGINALPOSTREQUEST']._serialized_end=436
+  _globals['_CREATEPOSTCREATEORIGINALPOSTRESPONSE']._serialized_start=438
+  _globals['_CREATEPOSTCREATEORIGINALPOSTRESPONSE']._serialized_end=488
+  _globals['_CREATEORIGINALPOSTSREQUEST']._serialized_start=490
+  _globals['_CREATEORIGINALPOSTSREQUEST']._serialized_end=601
+  _globals['_CREATEPOSTCREATEORIGINALPOSTSRESPONSE']._serialized_start=603
+  _globals['_CREATEPOSTCREATEORIGINALPOSTSRESPONSE']._serialized_end=655
+  _globals['_DELETEORIGINALPOSTSBYCHANNELREQUEST']._serialized_start=657
+  _globals['_DELETEORIGINALPOSTSBYCHANNELREQUEST']._serialized_end=720
+  _globals['_DELETEORIGINALPOSTSBYCHANNELRESPONSE']._serialized_start=722
+  _globals['_DELETEORIGINALPOSTSBYCHANNELRESPONSE']._serialized_end=773
+  _globals['_GETORIGINALPOSTSFROMDBREQUEST']._serialized_start=775
+  _globals['_GETORIGINALPOSTSFROMDBREQUEST']._serialized_end=837
+  _globals['_GETORIGINALPOSTSFROMDBRESPONSE']._serialized_start=839
+  _globals['_GETORIGINALPOSTSFROMDBRESPONSE']._serialized_end=916
   _globals['_POSTSPROCESSOR']._serialized_start=919
   _globals['_POSTSPROCESSOR']._serialized_end=1437
 # @@protoc_insertion_point(module_scope)
