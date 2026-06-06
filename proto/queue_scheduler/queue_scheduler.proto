@@ -40,7 +40,7 @@ message PublishPostData {
     // Object text
     string body = 2;
     // URLs on original post
-    repeated string post_url = 3;
+    repeated string posts_urls = 3;
 }
 
 message CreatePostRequest {

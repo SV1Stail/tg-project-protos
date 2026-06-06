@@ -12,7 +12,7 @@ all: build-protoc-image generate
 build-protoc-image:
 	docker build -t $(PROTOC_IMAGE) -f docker/protoc/Dockerfile .
 
-generate: generate-go
+generate: generate-go generate-py
 
 generate-go:
 	mkdir -p $(GO_OUT)
