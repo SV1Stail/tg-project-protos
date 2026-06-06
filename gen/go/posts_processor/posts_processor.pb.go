@@ -22,414 +22,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CreateOriginalPostRequest struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Text             string                 `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
-	LinkOriginalPost string                 `protobuf:"bytes,2,opt,name=link_original_post,json=linkOriginalPost,proto3" json:"link_original_post,omitempty"`
-	OriginalChannel  string                 `protobuf:"bytes,3,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
-	Theme            string                 `protobuf:"bytes,4,opt,name=theme,proto3" json:"theme,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
-}
-
-func (x *CreateOriginalPostRequest) Reset() {
-	*x = CreateOriginalPostRequest{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateOriginalPostRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateOriginalPostRequest) ProtoMessage() {}
-
-func (x *CreateOriginalPostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateOriginalPostRequest.ProtoReflect.Descriptor instead.
-func (*CreateOriginalPostRequest) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *CreateOriginalPostRequest) GetText() string {
-	if x != nil {
-		return x.Text
-	}
-	return ""
-}
-
-func (x *CreateOriginalPostRequest) GetLinkOriginalPost() string {
-	if x != nil {
-		return x.LinkOriginalPost
-	}
-	return ""
-}
-
-func (x *CreateOriginalPostRequest) GetOriginalChannel() string {
-	if x != nil {
-		return x.OriginalChannel
-	}
-	return ""
-}
-
-func (x *CreateOriginalPostRequest) GetTheme() string {
-	if x != nil {
-		return x.Theme
-	}
-	return ""
-}
-
-type CreatePostCreateOriginalPostResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreatePostCreateOriginalPostResponse) Reset() {
-	*x = CreatePostCreateOriginalPostResponse{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreatePostCreateOriginalPostResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreatePostCreateOriginalPostResponse) ProtoMessage() {}
-
-func (x *CreatePostCreateOriginalPostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreatePostCreateOriginalPostResponse.ProtoReflect.Descriptor instead.
-func (*CreatePostCreateOriginalPostResponse) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *CreatePostCreateOriginalPostResponse) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-type CreateOriginalPostsRequest struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Text             []string               `protobuf:"bytes,1,rep,name=text,proto3" json:"text,omitempty"`
-	LinkOriginalPost string                 `protobuf:"bytes,2,opt,name=link_original_post,json=linkOriginalPost,proto3" json:"link_original_post,omitempty"`
-	OriginalChannel  string                 `protobuf:"bytes,3,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
-	Theme            string                 `protobuf:"bytes,4,opt,name=theme,proto3" json:"theme,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
-}
-
-func (x *CreateOriginalPostsRequest) Reset() {
-	*x = CreateOriginalPostsRequest{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateOriginalPostsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateOriginalPostsRequest) ProtoMessage() {}
-
-func (x *CreateOriginalPostsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateOriginalPostsRequest.ProtoReflect.Descriptor instead.
-func (*CreateOriginalPostsRequest) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *CreateOriginalPostsRequest) GetText() []string {
-	if x != nil {
-		return x.Text
-	}
-	return nil
-}
-
-func (x *CreateOriginalPostsRequest) GetLinkOriginalPost() string {
-	if x != nil {
-		return x.LinkOriginalPost
-	}
-	return ""
-}
-
-func (x *CreateOriginalPostsRequest) GetOriginalChannel() string {
-	if x != nil {
-		return x.OriginalChannel
-	}
-	return ""
-}
-
-func (x *CreateOriginalPostsRequest) GetTheme() string {
-	if x != nil {
-		return x.Theme
-	}
-	return ""
-}
-
-type CreatePostCreateOriginalPostsResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreatePostCreateOriginalPostsResponse) Reset() {
-	*x = CreatePostCreateOriginalPostsResponse{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[3]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreatePostCreateOriginalPostsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreatePostCreateOriginalPostsResponse) ProtoMessage() {}
-
-func (x *CreatePostCreateOriginalPostsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[3]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreatePostCreateOriginalPostsResponse.ProtoReflect.Descriptor instead.
-func (*CreatePostCreateOriginalPostsResponse) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *CreatePostCreateOriginalPostsResponse) GetIds() []string {
-	if x != nil {
-		return x.Ids
-	}
-	return nil
-}
-
-type DeleteOriginalPostsByChannelRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	OriginalChannel string                 `protobuf:"bytes,1,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
-}
-
-func (x *DeleteOriginalPostsByChannelRequest) Reset() {
-	*x = DeleteOriginalPostsByChannelRequest{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteOriginalPostsByChannelRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteOriginalPostsByChannelRequest) ProtoMessage() {}
-
-func (x *DeleteOriginalPostsByChannelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteOriginalPostsByChannelRequest.ProtoReflect.Descriptor instead.
-func (*DeleteOriginalPostsByChannelRequest) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *DeleteOriginalPostsByChannelRequest) GetOriginalChannel() string {
-	if x != nil {
-		return x.OriginalChannel
-	}
-	return ""
-}
-
-type DeleteOriginalPostsByChannelResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *DeleteOriginalPostsByChannelResponse) Reset() {
-	*x = DeleteOriginalPostsByChannelResponse{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[5]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *DeleteOriginalPostsByChannelResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*DeleteOriginalPostsByChannelResponse) ProtoMessage() {}
-
-func (x *DeleteOriginalPostsByChannelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[5]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use DeleteOriginalPostsByChannelResponse.ProtoReflect.Descriptor instead.
-func (*DeleteOriginalPostsByChannelResponse) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *DeleteOriginalPostsByChannelResponse) GetIds() []string {
-	if x != nil {
-		return x.Ids
-	}
-	return nil
-}
-
-type GetOriginalPostsFromDBRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
-	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetOriginalPostsFromDBRequest) Reset() {
-	*x = GetOriginalPostsFromDBRequest{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetOriginalPostsFromDBRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetOriginalPostsFromDBRequest) ProtoMessage() {}
-
-func (x *GetOriginalPostsFromDBRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetOriginalPostsFromDBRequest.ProtoReflect.Descriptor instead.
-func (*GetOriginalPostsFromDBRequest) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *GetOriginalPostsFromDBRequest) GetLimit() int32 {
-	if x != nil {
-		return x.Limit
-	}
-	return 0
-}
-
-func (x *GetOriginalPostsFromDBRequest) GetOffset() int32 {
-	if x != nil {
-		return x.Offset
-	}
-	return 0
-}
-
-type GetOriginalPostsFromDBResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Posts         []*OriginalPost        `protobuf:"bytes,1,rep,name=posts,proto3" json:"posts,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetOriginalPostsFromDBResponse) Reset() {
-	*x = GetOriginalPostsFromDBResponse{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetOriginalPostsFromDBResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetOriginalPostsFromDBResponse) ProtoMessage() {}
-
-func (x *GetOriginalPostsFromDBResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetOriginalPostsFromDBResponse.ProtoReflect.Descriptor instead.
-func (*GetOriginalPostsFromDBResponse) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *GetOriginalPostsFromDBResponse) GetPosts() []*OriginalPost {
-	if x != nil {
-		return x.Posts
-	}
-	return nil
-}
-
 type OriginalPost struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -446,7 +38,7 @@ type OriginalPost struct {
 
 func (x *OriginalPost) Reset() {
 	*x = OriginalPost{}
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[8]
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -458,7 +50,7 @@ func (x *OriginalPost) String() string {
 func (*OriginalPost) ProtoMessage() {}
 
 func (x *OriginalPost) ProtoReflect() protoreflect.Message {
-	mi := &file_posts_processor_posts_processor_proto_msgTypes[8]
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -471,7 +63,7 @@ func (x *OriginalPost) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OriginalPost.ProtoReflect.Descriptor instead.
 func (*OriginalPost) Descriptor() ([]byte, []int) {
-	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{8}
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *OriginalPost) GetId() string {
@@ -530,11 +122,430 @@ func (x *OriginalPost) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+type CreateOriginalPostRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Text             string                 `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+	LinkOriginalPost string                 `protobuf:"bytes,2,opt,name=link_original_post,json=linkOriginalPost,proto3" json:"link_original_post,omitempty"`
+	OriginalChannel  string                 `protobuf:"bytes,3,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
+	Theme            string                 `protobuf:"bytes,4,opt,name=theme,proto3" json:"theme,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CreateOriginalPostRequest) Reset() {
+	*x = CreateOriginalPostRequest{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOriginalPostRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOriginalPostRequest) ProtoMessage() {}
+
+func (x *CreateOriginalPostRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOriginalPostRequest.ProtoReflect.Descriptor instead.
+func (*CreateOriginalPostRequest) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *CreateOriginalPostRequest) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
+}
+
+func (x *CreateOriginalPostRequest) GetLinkOriginalPost() string {
+	if x != nil {
+		return x.LinkOriginalPost
+	}
+	return ""
+}
+
+func (x *CreateOriginalPostRequest) GetOriginalChannel() string {
+	if x != nil {
+		return x.OriginalChannel
+	}
+	return ""
+}
+
+func (x *CreateOriginalPostRequest) GetTheme() string {
+	if x != nil {
+		return x.Theme
+	}
+	return ""
+}
+
+type CreatePostCreateOriginalPostResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreatePostCreateOriginalPostResponse) Reset() {
+	*x = CreatePostCreateOriginalPostResponse{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreatePostCreateOriginalPostResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreatePostCreateOriginalPostResponse) ProtoMessage() {}
+
+func (x *CreatePostCreateOriginalPostResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreatePostCreateOriginalPostResponse.ProtoReflect.Descriptor instead.
+func (*CreatePostCreateOriginalPostResponse) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreatePostCreateOriginalPostResponse) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type CreateOriginalPostsRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Text             []string               `protobuf:"bytes,1,rep,name=text,proto3" json:"text,omitempty"`
+	LinkOriginalPost string                 `protobuf:"bytes,2,opt,name=link_original_post,json=linkOriginalPost,proto3" json:"link_original_post,omitempty"`
+	OriginalChannel  string                 `protobuf:"bytes,3,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
+	Theme            string                 `protobuf:"bytes,4,opt,name=theme,proto3" json:"theme,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CreateOriginalPostsRequest) Reset() {
+	*x = CreateOriginalPostsRequest{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOriginalPostsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOriginalPostsRequest) ProtoMessage() {}
+
+func (x *CreateOriginalPostsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOriginalPostsRequest.ProtoReflect.Descriptor instead.
+func (*CreateOriginalPostsRequest) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CreateOriginalPostsRequest) GetText() []string {
+	if x != nil {
+		return x.Text
+	}
+	return nil
+}
+
+func (x *CreateOriginalPostsRequest) GetLinkOriginalPost() string {
+	if x != nil {
+		return x.LinkOriginalPost
+	}
+	return ""
+}
+
+func (x *CreateOriginalPostsRequest) GetOriginalChannel() string {
+	if x != nil {
+		return x.OriginalChannel
+	}
+	return ""
+}
+
+func (x *CreateOriginalPostsRequest) GetTheme() string {
+	if x != nil {
+		return x.Theme
+	}
+	return ""
+}
+
+type CreatePostCreateOriginalPostsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreatePostCreateOriginalPostsResponse) Reset() {
+	*x = CreatePostCreateOriginalPostsResponse{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreatePostCreateOriginalPostsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreatePostCreateOriginalPostsResponse) ProtoMessage() {}
+
+func (x *CreatePostCreateOriginalPostsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreatePostCreateOriginalPostsResponse.ProtoReflect.Descriptor instead.
+func (*CreatePostCreateOriginalPostsResponse) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *CreatePostCreateOriginalPostsResponse) GetIds() []string {
+	if x != nil {
+		return x.Ids
+	}
+	return nil
+}
+
+type DeleteOriginalPostsByChannelRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	OriginalChannel string                 `protobuf:"bytes,1,opt,name=original_channel,json=originalChannel,proto3" json:"original_channel,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *DeleteOriginalPostsByChannelRequest) Reset() {
+	*x = DeleteOriginalPostsByChannelRequest{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteOriginalPostsByChannelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteOriginalPostsByChannelRequest) ProtoMessage() {}
+
+func (x *DeleteOriginalPostsByChannelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteOriginalPostsByChannelRequest.ProtoReflect.Descriptor instead.
+func (*DeleteOriginalPostsByChannelRequest) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DeleteOriginalPostsByChannelRequest) GetOriginalChannel() string {
+	if x != nil {
+		return x.OriginalChannel
+	}
+	return ""
+}
+
+type DeleteOriginalPostsByChannelResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteOriginalPostsByChannelResponse) Reset() {
+	*x = DeleteOriginalPostsByChannelResponse{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteOriginalPostsByChannelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteOriginalPostsByChannelResponse) ProtoMessage() {}
+
+func (x *DeleteOriginalPostsByChannelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteOriginalPostsByChannelResponse.ProtoReflect.Descriptor instead.
+func (*DeleteOriginalPostsByChannelResponse) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DeleteOriginalPostsByChannelResponse) GetIds() []string {
+	if x != nil {
+		return x.Ids
+	}
+	return nil
+}
+
+type GetOriginalPostsFromDBRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOriginalPostsFromDBRequest) Reset() {
+	*x = GetOriginalPostsFromDBRequest{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOriginalPostsFromDBRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOriginalPostsFromDBRequest) ProtoMessage() {}
+
+func (x *GetOriginalPostsFromDBRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOriginalPostsFromDBRequest.ProtoReflect.Descriptor instead.
+func (*GetOriginalPostsFromDBRequest) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetOriginalPostsFromDBRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *GetOriginalPostsFromDBRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type GetOriginalPostsFromDBResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Posts         []*OriginalPost        `protobuf:"bytes,1,rep,name=posts,proto3" json:"posts,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOriginalPostsFromDBResponse) Reset() {
+	*x = GetOriginalPostsFromDBResponse{}
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOriginalPostsFromDBResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOriginalPostsFromDBResponse) ProtoMessage() {}
+
+func (x *GetOriginalPostsFromDBResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_posts_processor_posts_processor_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOriginalPostsFromDBResponse.ProtoReflect.Descriptor instead.
+func (*GetOriginalPostsFromDBResponse) Descriptor() ([]byte, []int) {
+	return file_posts_processor_posts_processor_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetOriginalPostsFromDBResponse) GetPosts() []*OriginalPost {
+	if x != nil {
+		return x.Posts
+	}
+	return nil
+}
+
 var File_posts_processor_posts_processor_proto protoreflect.FileDescriptor
 
 const file_posts_processor_posts_processor_proto_rawDesc = "" +
 	"\n" +
-	"%posts_processor/posts_processor.proto\x12\x0epost_processor\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x01\n" +
+	"%posts_processor/posts_processor.proto\x12\x0epost_processor\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc5\x02\n" +
+	"\fOriginalPost\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04data\x18\x02 \x01(\tR\x04data\x12,\n" +
+	"\x12link_original_post\x18\x03 \x01(\tR\x10linkOriginalPost\x12)\n" +
+	"\x10original_channel\x18\x04 \x01(\tR\x0foriginalChannel\x12,\n" +
+	"\x12original_image_url\x18\x05 \x01(\tR\x10originalImageUrl\x12\x14\n" +
+	"\x05theme\x18\x06 \x01(\tR\x05theme\x129\n" +
+	"\n" +
+	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\x9e\x01\n" +
 	"\x19CreateOriginalPostRequest\x12\x12\n" +
 	"\x04text\x18\x01 \x01(\tR\x04text\x12,\n" +
 	"\x12link_original_post\x18\x02 \x01(\tR\x10linkOriginalPost\x12)\n" +
@@ -557,18 +568,7 @@ const file_posts_processor_posts_processor_proto_rawDesc = "" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\"T\n" +
 	"\x1eGetOriginalPostsFromDBResponse\x122\n" +
-	"\x05posts\x18\x01 \x03(\v2\x1c.post_processor.OriginalPostR\x05posts\"\xc5\x02\n" +
-	"\fOriginalPost\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04data\x18\x02 \x01(\tR\x04data\x12,\n" +
-	"\x12link_original_post\x18\x03 \x01(\tR\x10linkOriginalPost\x12)\n" +
-	"\x10original_channel\x18\x04 \x01(\tR\x0foriginalChannel\x12,\n" +
-	"\x12original_image_url\x18\x05 \x01(\tR\x10originalImageUrl\x12\x14\n" +
-	"\x05theme\x18\x06 \x01(\tR\x05theme\x129\n" +
-	"\n" +
-	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
-	"\n" +
-	"updated_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt2\x86\x04\n" +
+	"\x05posts\x18\x01 \x03(\v2\x1c.post_processor.OriginalPostR\x05posts2\x86\x04\n" +
 	"\x0ePostsProcessor\x12u\n" +
 	"\x12CreateOriginalPost\x12).post_processor.CreateOriginalPostRequest\x1a4.post_processor.CreatePostCreateOriginalPostResponse\x12x\n" +
 	"\x13CreateOriginalPosts\x12*.post_processor.CreateOriginalPostsRequest\x1a5.post_processor.CreatePostCreateOriginalPostsResponse\x12\x89\x01\n" +
@@ -589,29 +589,29 @@ func file_posts_processor_posts_processor_proto_rawDescGZIP() []byte {
 
 var file_posts_processor_posts_processor_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_posts_processor_posts_processor_proto_goTypes = []any{
-	(*CreateOriginalPostRequest)(nil),             // 0: post_processor.CreateOriginalPostRequest
-	(*CreatePostCreateOriginalPostResponse)(nil),  // 1: post_processor.CreatePostCreateOriginalPostResponse
-	(*CreateOriginalPostsRequest)(nil),            // 2: post_processor.CreateOriginalPostsRequest
-	(*CreatePostCreateOriginalPostsResponse)(nil), // 3: post_processor.CreatePostCreateOriginalPostsResponse
-	(*DeleteOriginalPostsByChannelRequest)(nil),   // 4: post_processor.DeleteOriginalPostsByChannelRequest
-	(*DeleteOriginalPostsByChannelResponse)(nil),  // 5: post_processor.DeleteOriginalPostsByChannelResponse
-	(*GetOriginalPostsFromDBRequest)(nil),         // 6: post_processor.GetOriginalPostsFromDBRequest
-	(*GetOriginalPostsFromDBResponse)(nil),        // 7: post_processor.GetOriginalPostsFromDBResponse
-	(*OriginalPost)(nil),                          // 8: post_processor.OriginalPost
+	(*OriginalPost)(nil),                          // 0: post_processor.OriginalPost
+	(*CreateOriginalPostRequest)(nil),             // 1: post_processor.CreateOriginalPostRequest
+	(*CreatePostCreateOriginalPostResponse)(nil),  // 2: post_processor.CreatePostCreateOriginalPostResponse
+	(*CreateOriginalPostsRequest)(nil),            // 3: post_processor.CreateOriginalPostsRequest
+	(*CreatePostCreateOriginalPostsResponse)(nil), // 4: post_processor.CreatePostCreateOriginalPostsResponse
+	(*DeleteOriginalPostsByChannelRequest)(nil),   // 5: post_processor.DeleteOriginalPostsByChannelRequest
+	(*DeleteOriginalPostsByChannelResponse)(nil),  // 6: post_processor.DeleteOriginalPostsByChannelResponse
+	(*GetOriginalPostsFromDBRequest)(nil),         // 7: post_processor.GetOriginalPostsFromDBRequest
+	(*GetOriginalPostsFromDBResponse)(nil),        // 8: post_processor.GetOriginalPostsFromDBResponse
 	(*timestamppb.Timestamp)(nil),                 // 9: google.protobuf.Timestamp
 }
 var file_posts_processor_posts_processor_proto_depIdxs = []int32{
-	8, // 0: post_processor.GetOriginalPostsFromDBResponse.posts:type_name -> post_processor.OriginalPost
-	9, // 1: post_processor.OriginalPost.created_at:type_name -> google.protobuf.Timestamp
-	9, // 2: post_processor.OriginalPost.updated_at:type_name -> google.protobuf.Timestamp
-	0, // 3: post_processor.PostsProcessor.CreateOriginalPost:input_type -> post_processor.CreateOriginalPostRequest
-	2, // 4: post_processor.PostsProcessor.CreateOriginalPosts:input_type -> post_processor.CreateOriginalPostsRequest
-	4, // 5: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:input_type -> post_processor.DeleteOriginalPostsByChannelRequest
-	6, // 6: post_processor.PostsProcessor.GetOriginalPostsFromDB:input_type -> post_processor.GetOriginalPostsFromDBRequest
-	1, // 7: post_processor.PostsProcessor.CreateOriginalPost:output_type -> post_processor.CreatePostCreateOriginalPostResponse
-	3, // 8: post_processor.PostsProcessor.CreateOriginalPosts:output_type -> post_processor.CreatePostCreateOriginalPostsResponse
-	5, // 9: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:output_type -> post_processor.DeleteOriginalPostsByChannelResponse
-	7, // 10: post_processor.PostsProcessor.GetOriginalPostsFromDB:output_type -> post_processor.GetOriginalPostsFromDBResponse
+	9, // 0: post_processor.OriginalPost.created_at:type_name -> google.protobuf.Timestamp
+	9, // 1: post_processor.OriginalPost.updated_at:type_name -> google.protobuf.Timestamp
+	0, // 2: post_processor.GetOriginalPostsFromDBResponse.posts:type_name -> post_processor.OriginalPost
+	1, // 3: post_processor.PostsProcessor.CreateOriginalPost:input_type -> post_processor.CreateOriginalPostRequest
+	3, // 4: post_processor.PostsProcessor.CreateOriginalPosts:input_type -> post_processor.CreateOriginalPostsRequest
+	5, // 5: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:input_type -> post_processor.DeleteOriginalPostsByChannelRequest
+	7, // 6: post_processor.PostsProcessor.GetOriginalPostsFromDB:input_type -> post_processor.GetOriginalPostsFromDBRequest
+	2, // 7: post_processor.PostsProcessor.CreateOriginalPost:output_type -> post_processor.CreatePostCreateOriginalPostResponse
+	4, // 8: post_processor.PostsProcessor.CreateOriginalPosts:output_type -> post_processor.CreatePostCreateOriginalPostsResponse
+	6, // 9: post_processor.PostsProcessor.DeleteOriginalPostsByChannel:output_type -> post_processor.DeleteOriginalPostsByChannelResponse
+	8, // 10: post_processor.PostsProcessor.GetOriginalPostsFromDB:output_type -> post_processor.GetOriginalPostsFromDBResponse
 	7, // [7:11] is the sub-list for method output_type
 	3, // [3:7] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
